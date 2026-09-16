@@ -8,7 +8,7 @@
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="css/styles.css?v=20260916-4" />
+<link rel="stylesheet" href="css/styles.css?v=20260916-5" />
 </head>
 <body>
 
@@ -22,6 +22,7 @@
       <a href="#overview">Overview</a>
       <a href="#market">Market</a>
       <a href="#map">Map</a>
+      <a href="#regions">Regions</a>
       <a href="#findings">Findings</a>
       <a href="#methodology">Methodology</a>
     </nav>
@@ -86,8 +87,11 @@
         exceptional outlier reads as bigger, not just "qualifying." Everything else recedes to a small, muted gray dot
         &mdash; still visible, because the surrounding market density is part of the story, but out of the way. Use the
         threshold slider, the Actual/Potential toggle, and the filters to test what's producing the pattern you see;
-        use <strong>Inspect area</strong> (top-left of the map) to drop a ~5&ndash;7&nbsp;mile radius anywhere and get a
-        hard count of how many strong listings sit near each other, rather than guessing from dot density alone.
+        use <strong>Inspect area</strong> (top-left of the map) to drop a radius of up to 20&nbsp;km anywhere &mdash;
+        Carson's ~5&ndash;7&nbsp;mile first-pass scale is the default &mdash; and get a full local market summary: hit
+        rate vs. the statewide baseline, revenue/ADR/occupancy medians, property mix, amenities, and the strongest
+        listings nearby, rather than guessing from dot density alone. Click any listing for its full detail card
+        &mdash; the Airbnb link is a button inside it, never an automatic redirect.
       </p>
       <div class="map-shell">
         <div class="map-canvas-wrap">
@@ -106,10 +110,28 @@
     </div>
   </section>
 
+  <!-- Regions -->
+  <section id="regions" class="section">
+    <div class="container container--wide">
+      <p class="section-kicker">Section 3 &middot; discovered, not assumed</p>
+      <h2>Natural Revenue Regions</h2>
+      <p class="finding-block__intro">
+        These 10 regions were not drawn by hand and don't follow city limits, ZIP codes, or AirDNA's own market
+        boundaries. Each one is a data-driven cluster of listings at or above $90,000 actual revenue that sit close
+        together geographically (density-based clustering, adjacent pockets merged, then grown by 15&nbsp;km to
+        capture the full surrounding market) &mdash; see <a href="#methodology">Methodology</a> for the exact method.
+        A region's size reflects how many strong listings cluster there, not a target headcount; some are tight
+        three-figure pockets, and that's the point. Open any region for its own map, findings, and STR regulatory
+        research.
+      </p>
+      <div id="region-grid" class="region-grid"></div>
+    </div>
+  </section>
+
   <!-- Findings -->
   <section id="findings" class="section">
     <div class="container container--wide">
-      <p class="section-kicker">Section 3</p>
+      <p class="section-kicker">Section 4</p>
       <h2>Findings: What's Behind the Green Dots</h2>
       <p id="findings-intro" class="finding-block__intro">
         These are supporting observations to help interpret the map &mdash; not a ranking, and not a recommendation.
@@ -169,14 +191,16 @@
   <!-- Methodology -->
   <section id="methodology" class="section section--note">
     <div class="container container--wide">
-      <p class="section-kicker">Section 4</p>
+      <p class="section-kicker">Section 5</p>
       <h2>Methodology &amp; Scope</h2>
       <ul class="methodology-list">
         <li><strong>Source:</strong> AirDNA/USPPD Idaho property-level export, pulled via Snowflake (<code>Iqbal_Idaho_2026-09-16-1857.csv</code>).</li>
         <li><strong>Working population:</strong> Entire home/apt listings in Idaho with 20+ reviews and 230+ active listing nights in the trailing twelve months, minus 23 listings flagged by QC as boutique-hotel/event-venue properties rather than genuine single-unit STR comps &mdash; 5,736 listings.</li>
         <li><strong>Actual (LTM) revenue</strong> = <code>REVENUE_LTM</code>: real trailing-twelve-month gross revenue. <strong>Potential (LTM) revenue</strong> = <code>REVENUE_POTENTIAL_LTM</code>: AirDNA's modeled revenue under an optimized booking calendar.</li>
         <li><strong>$90,000 reference threshold:</strong> a starting point for visual emphasis and the Findings-section comparisons, adjustable live on the map &mdash; not a market cutoff or investment rule.</li>
-        <li><strong>Scope:</strong> this is a revenue-side geographic discovery tool, the first trial of a workflow meant to generalize to other states. It does not select a market, define a buy box, or declare any geographic cluster &mdash; those calls stay with the analyst.</li>
+        <li><strong>Region discovery:</strong> DBSCAN density clustering (haversine distance) over listings &ge; $90k actual revenue &mdash; eps=12km, min 4 listings per cluster &mdash; with clusters whose centroids sit within 30km merged into one region. Each region's boundary is the convex hull of its qualifying listings, buffered 15km outward to capture the surrounding market at every revenue level. Fully reproducible: <code>scripts/generate_map_data.py</code>. This finds concentrations of <em>strong</em> listings, not just dense listing counts &mdash; it will not simply rediscover Boise.</li>
+        <li><strong>STR regulatory research</strong> (regional pages): sourced from primary government/statute text where available, dated at verification, with uncertainty explicitly flagged where a primary source could not be confirmed. Not legal advice &mdash; verify directly before relying on it for an acquisition or operating decision.</li>
+        <li><strong>Scope:</strong> this is a revenue-side geographic discovery and research tool, the first trial of a workflow meant to generalize to other states. It does not select a market, define a buy box, or make an acquisition recommendation &mdash; those calls stay with the analyst.</li>
       </ul>
     </div>
   </section>
@@ -189,13 +213,22 @@
   </div>
 </footer>
 
+<!-- Property detail modal: clicking a map marker opens this, never Airbnb directly. -->
+<div id="property-modal" class="property-modal" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Listing detail">
+  <div class="property-modal__backdrop" onclick="closePropertyModal()"></div>
+  <div class="property-modal__panel">
+    <button type="button" class="property-modal__close" aria-label="Close" onclick="closePropertyModal()">&times;</button>
+    <div id="property-modal-body"></div>
+  </div>
+</div>
+
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <script src="https://unpkg.com/leaflet.heat@0.2.0/dist/leaflet-heat.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"></script>
-<script src="js/config.js?v=20260916-4"></script>
-<script src="js/util.js?v=20260916-4"></script>
-<script src="js/map.js?v=20260916-4"></script>
-<script src="js/charts.js?v=20260916-4"></script>
-<script src="js/main.js?v=20260916-4"></script>
+<script src="js/config.js?v=20260916-5"></script>
+<script src="js/util.js?v=20260916-5"></script>
+<script src="js/map.js?v=20260916-5"></script>
+<script src="js/charts.js?v=20260916-5"></script>
+<script src="js/main.js?v=20260916-5"></script>
 </body>
 </html>

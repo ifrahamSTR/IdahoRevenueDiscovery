@@ -16,11 +16,17 @@ const CONFIG = {
   thresholdMax: 200000,
   thresholdStep: 5000,
 
-  // Default "inspect area" radius, miles. Carson's 5-7mi first-pass scale.
-  defaultRadiusMiles: 6,
-  radiusMin: 2,
-  radiusMax: 12,
-  radiusStep: 0.5,
+  // "Inspect area" radius, km. Carson's 5-7mi (~8-11km) first-pass scale as
+  // the default; adjustable up to 20km.
+  defaultRadiusKm: 8,
+  radiusMinKm: 2,
+  radiusMaxKm: 20,
+  radiusStepKm: 1,
+
+  // Fixed reference revenue level shown alongside the live threshold in the
+  // Inspect area summary, so "$90k+ / $100k+" both stay visible regardless
+  // of where the analyst has moved the main threshold slider.
+  secondaryReferenceThreshold: 100000,
 
   // Dual-handle range filters on the map sidebar. Each defaults wide open
   // (the slider's own min/max), so "default is all" -- nothing is excluded
@@ -45,6 +51,8 @@ const CONFIG = {
     upside: "#d99132",
     upsideStroke: "#8a5a10",
     selection: "#075646",
+    regionStroke: "#0f6e93",
+    regionFill: "rgba(15,110,147,0.07)",
   },
 
   propertyTypeOrder: ["House", "Cabin", "Condo", "Apartment", "Townhouse", "Other"],

@@ -19,8 +19,9 @@ let ALL_LISTINGS = [];
 let FILTERED = [];
 let VIEW_MODE = "points"; // 'points' | 'heatAll' | 'heatQualify'
 let INSPECT_ACTIVE = false;
-let INSPECT_RADIUS = CONFIG.defaultRadiusMiles;
+let INSPECT_RADIUS = CONFIG.defaultRadiusKm;
 let INSPECT_CENTER = null;
+let REGION_LAYER = null;
 
 function defaultRangeFilters() {
   const r = CONFIG.ranges;
@@ -210,6 +211,28 @@ function tooltipHtml(l) {
 }
 
 // ---------------------------------------------------------------------------
+// Property detail modal -- clicking a marker never navigates straight to
+// Airbnb; it opens this card first, with "View on Airbnb" as an explicit
+// button inside it. Reuses popupHtml()'s markup (same card, just presented
+// bigger/centered instead of pinned to a map popup bubble).
+// ---------------------------------------------------------------------------
+function openPropertyModal(l) {
+  const modal = document.getElementById("property-modal");
+  const body = document.getElementById("property-modal-body");
+  if (!modal || !body) return;
+  body.innerHTML = popupHtml(l);
+  modal.classList.add("property-modal--open");
+  modal.setAttribute("aria-hidden", "false");
+}
+function closePropertyModal() {
+  const modal = document.getElementById("property-modal");
+  if (!modal) return;
+  modal.classList.remove("property-modal--open");
+  modal.setAttribute("aria-hidden", "true");
+}
+window.closePropertyModal = closePropertyModal;
+
+// ---------------------------------------------------------------------------
 // Drawing
 // ---------------------------------------------------------------------------
 function makeMarker(l, radius, fill, stroke, weight, fillOpacity) {
@@ -222,7 +245,7 @@ function makeMarker(l, radius, fill, stroke, weight, fillOpacity) {
     opacity: weight > 0 ? 0.9 : 0,
   });
   m.bindTooltip(tooltipHtml(l), { sticky: true, direction: "top", offset: [0, -4] });
-  m.bindPopup(popupHtml(l), { maxWidth: 300, minWidth: 260, className: "idaho-popup" });
+  m.on("click", () => openPropertyModal(l));
   return m;
 }
 
@@ -354,7 +377,7 @@ function drawInspectCircle(latlng) {
   if (INSPECT_CIRCLE) MAP.removeLayer(INSPECT_CIRCLE);
   if (INSPECT_MARKER) MAP.removeLayer(INSPECT_MARKER);
   INSPECT_CIRCLE = L.circle(latlng, {
-    radius: INSPECT_RADIUS * 1609.34,
+    radius: INSPECT_RADIUS * 1000,
     color: CONFIG.colors.selection,
     weight: 1.5,
     fillColor: CONFIG.colors.selection,
@@ -367,8 +390,22 @@ function drawInspectCircle(latlng) {
 function runInspect(latlng) {
   INSPECT_CENTER = latlng;
   drawInspectCircle(latlng);
-  const nearby = FILTERED.filter((l) => distanceMiles(latlng.lat, latlng.lng, l.lat, l.lng) <= INSPECT_RADIUS);
+  const nearby = FILTERED.filter((l) => distanceKm(latlng.lat, latlng.lng, l.lat, l.lng) <= INSPECT_RADIUS);
   renderInspectResults(nearby);
+}
+
+function compareRow(label, localVal, stateVal, fmt) {
+  return (
+    '<div class="inspect-compare-row"><span class="inspect-compare-row__label">' + label + "</span>" +
+    '<span class="inspect-compare-row__local">' + fmt(localVal) + "</span>" +
+    '<span class="inspect-compare-row__state">' + fmt(stateVal) + " state</span></div>"
+  );
+}
+
+function topCounts(items, keyFn, limit) {
+  const counts = {};
+  items.forEach((l) => { const k = keyFn(l); counts[k] = (counts[k] || 0) + 1; });
+  return Object.entries(counts).sort((a, b) => b[1] - a[1]).slice(0, limit);
 }
 
 function renderInspectResults(nearby) {
@@ -376,65 +413,89 @@ function renderInspectResults(nearby) {
   if (!panel) return;
   const n = nearby.length;
   if (!n) {
-    panel.innerHTML = '<p class="inspect-empty">No listings from the current filter set fall within ' + INSPECT_RADIUS + " mi of that point.</p>";
+    panel.innerHTML = '<p class="inspect-empty">No listings from the current filter set fall within ' + INSPECT_RADIUS + " km of that point.</p>";
     return;
   }
+  const T = FILTERS.threshold;
+  const T2 = CONFIG.secondaryReferenceThreshold;
   const qual = nearby.filter(qualifies);
+  const qual2 = nearby.filter((l) => l.revA >= T2);
   const localRate = qual.length / n;
   const statewideN = FILTERED.length;
   const statewideQual = FILTERED.filter(qualifies).length;
   const statewideRate = statewideN ? statewideQual / statewideN : 0;
   const idx = statewideRate > 0 ? localRate / statewideRate : null;
-  const medLocal = medianOf(nearby.map(valueFor));
-  const medState = medianOf(FILTERED.map(valueFor));
 
-  const typeCounts = {};
-  nearby.forEach((l) => { const b = propertyTypeBucket(l.pt); typeCounts[b] = (typeCounts[b] || 0) + 1; });
-  const topTypes = Object.entries(typeCounts).sort((a, b) => b[1] - a[1]).slice(0, 3)
-    .map(([k, v]) => k + " (" + v + ")").join(" · ");
+  const localVals = { revA: nearby.map((l) => l.revA), revP: nearby.map((l) => l.revP), adr: nearby.map((l) => l.adr), occ: nearby.map((l) => l.occ), bd: nearby.map((l) => l.bd), acc: nearby.map((l) => l.acc) };
+  const stateVals = { revA: FILTERED.map((l) => l.revA), revP: FILTERED.map((l) => l.revP), adr: FILTERED.map((l) => l.adr), occ: FILTERED.map((l) => l.occ), bd: FILTERED.map((l) => l.bd), acc: FILTERED.map((l) => l.acc) };
+
+  const types = topCounts(nearby, (l) => propertyTypeBucket(l.pt), 4);
+  const markets = topCounts(nearby, (l) => l.mkt, 3);
+  const cities = topCounts(nearby, (l) => l.city, 4);
+
+  const amenityRates = AMENITY_TOGGLES.filter((a) => ["tub", "pool", "sh", "instant"].includes(a.field)).map((a) => {
+    const c = nearby.filter((l) => l[a.field]).length;
+    return { label: a.label, pct: c / n };
+  });
 
   let html = "";
+
   html += '<div class="inspect-stat-row">';
-  html += '<div class="inspect-stat"><strong>' + fmtNumber(n) + '</strong><span>listings within ' + INSPECT_RADIUS + " mi</span></div>";
-  html += '<div class="inspect-stat inspect-stat--above"><strong>' + fmtNumber(qual.length) + '</strong><span>&ge; ' + fmtCurrencyCompact(FILTERS.threshold) + " (" + fmtPct(localRate, 1) + ")</span></div>";
+  html += '<div class="inspect-stat"><strong>' + fmtNumber(n) + "</strong><span>listings within " + INSPECT_RADIUS + " km</span></div>";
+  html += '<div class="inspect-stat inspect-stat--above"><strong>' + fmtNumber(qual.length) + "</strong><span>&ge; " + fmtCurrencyCompact(T) + " (" + fmtPct(localRate, 1) + ")</span></div>";
+  html += '<div class="inspect-stat inspect-stat--above2"><strong>' + fmtNumber(qual2.length) + "</strong><span>&ge; " + fmtCurrencyCompact(T2) + " (" + fmtPct(qual2.length / n, 1) + ")</span></div>";
   html += "</div>";
+
   html += '<p class="inspect-line">Local hit rate is ';
   if (idx != null) {
-    html += "<strong>" + idx.toFixed(1) + "&times;</strong> the statewide rate (" + fmtPct(statewideRate, 1) + " across the current filters) — ";
+    html += "<strong>" + idx.toFixed(1) + "&times;</strong> the statewide rate (" + fmtPct(statewideRate, 1) + ") — ";
     html += idx >= 1.5 ? "meaningfully denser here than the state as a whole." : idx <= 0.6 ? "thinner here than the state as a whole." : "close to the statewide baseline.";
   } else {
     html += "not comparable (no qualifying listings statewide under current filters).";
   }
   html += "</p>";
-  html += '<p class="inspect-line">Median ' + (FILTERS.metric === "revA" ? "actual" : "potential") + " revenue here: <strong>" + fmtCurrency(medLocal) + "</strong> vs. <strong>" + fmtCurrency(medState) + "</strong> statewide.</p>";
-  html += '<p class="inspect-line">Property types nearby: ' + escapeHtml(topTypes) + "</p>";
 
-  if (qual.length) {
-    html += '<div class="inspect-list-title">Qualifying listings in range</div><ul class="inspect-list">';
-    qual
-      .sort((a, b) => valueFor(b) - valueFor(a))
-      .slice(0, 12)
-      .forEach((l) => {
-        html += '<li class="inspect-list__item" data-id="' + escapeHtml(l.id) + '"><span class="inspect-list__title">' + escapeHtml(l.t.length > 38 ? l.t.slice(0, 36) + "…" : l.t) + '</span><span class="inspect-list__value">' + fmtCurrency(valueFor(l)) + "</span></li>";
-      });
-    if (qual.length > 12) html += '<li class="inspect-list__more">+' + (qual.length - 12) + " more</li>";
-    html += "</ul>";
-  }
+  html += '<div class="inspect-compare-table">';
+  html += compareRow("Median actual rev.", medianOf(localVals.revA), medianOf(stateVals.revA), fmtCurrency);
+  html += compareRow("Median potential rev.", medianOf(localVals.revP), medianOf(stateVals.revP), fmtCurrency);
+  html += compareRow("Median ADR", medianOf(localVals.adr), medianOf(stateVals.adr), fmtCurrency);
+  html += compareRow("Median occupancy", medianOf(localVals.occ), medianOf(stateVals.occ), (v) => fmtPct(v, 0));
+  html += compareRow("Median bedrooms", medianOf(localVals.bd), medianOf(stateVals.bd), (v) => v.toFixed(1));
+  html += compareRow("Median sleeps", medianOf(localVals.acc), medianOf(stateVals.acc), (v) => v.toFixed(1));
+  html += "</div>";
+
+  html += '<div class="inspect-chip-group"><span class="inspect-chip-group__label">Property types</span><div class="inspect-chip-row">';
+  types.forEach(([k, v]) => { html += '<span class="inspect-chip">' + escapeHtml(k) + " (" + v + ")</span>"; });
+  html += "</div></div>";
+
+  html += '<div class="inspect-chip-group"><span class="inspect-chip-group__label">Amenities here</span><div class="inspect-chip-row">';
+  amenityRates.forEach((a) => { html += '<span class="inspect-chip">' + escapeHtml(a.label) + " " + fmtPct(a.pct, 0) + "</span>"; });
+  html += "</div></div>";
+
+  html += '<div class="inspect-chip-group"><span class="inspect-chip-group__label">AirDNA markets</span><div class="inspect-chip-row">';
+  markets.forEach(([k, v]) => { html += '<span class="inspect-chip">' + escapeHtml(k) + " (" + v + ")</span>"; });
+  html += "</div></div>";
+
+  html += '<div class="inspect-chip-group"><span class="inspect-chip-group__label">Cities</span><div class="inspect-chip-row">';
+  cities.forEach(([k, v]) => { html += '<span class="inspect-chip">' + escapeHtml(k) + " (" + v + ")</span>"; });
+  html += "</div></div>";
+
+  const strongest = nearby.slice().sort((a, b) => valueFor(b) - valueFor(a)).slice(0, 10);
+  html += '<div class="inspect-list-title">Strongest listings in range</div><ul class="inspect-list">';
+  strongest.forEach((l) => {
+    html += '<li class="inspect-list__item" data-id="' + escapeHtml(l.id) + '"><span class="inspect-list__title">' + escapeHtml(l.t.length > 38 ? l.t.slice(0, 36) + "…" : l.t) + '</span><span class="inspect-list__value">' + fmtCurrency(valueFor(l)) + "</span></li>";
+  });
+  if (nearby.length > 10) html += '<li class="inspect-list__more">+' + (nearby.length - 10) + " more within range</li>";
+  html += "</ul>";
+
   panel.innerHTML = html;
 
   panel.querySelectorAll(".inspect-list__item").forEach((row) => {
     row.addEventListener("click", () => {
-      const l = FILTERED.find((x) => x.id === row.dataset.id);
+      const l = FILTERED.find((x) => x.id === row.dataset.id) || ALL_LISTINGS.find((x) => x.id === row.dataset.id);
       if (!l) return;
       MAP.setView([l.lat, l.lng], Math.max(MAP.getZoom(), 13), { animate: true });
-      window.setTimeout(() => {
-        if (VIEW_MODE !== "points") return;
-        POINTS_LAYER.eachLayer((layer) => {
-          if (layer.getLatLng && Math.abs(layer.getLatLng().lat - l.lat) < 1e-6 && Math.abs(layer.getLatLng().lng - l.lng) < 1e-6 && layer.getPopup) {
-            layer.openPopup();
-          }
-        });
-      }, 350);
+      openPropertyModal(l);
     });
   });
 }
@@ -459,7 +520,8 @@ function setBasemap(key) {
   TILE_LAYERS.forEach((l) => l.bringToBack());
 }
 
-function buildLayerControl() {
+function buildLayerControl(opts) {
+  opts = opts || {};
   const Control = L.Control.extend({
     onAdd: function () {
       const div = L.DomUtil.create("div", "map-widget map-widget--layers");
@@ -472,7 +534,10 @@ function buildLayerControl() {
         '<div class="map-widget__group" data-role="basemap">' +
         '<button class="map-widget__btn map-widget__btn--active" data-basemap="light">Light</button>' +
         '<button class="map-widget__btn" data-basemap="terrain">Terrain</button>' +
-        "</div>";
+        "</div>" +
+        (opts.hasRegions
+          ? '<div class="map-widget__group" data-role="regions"><button class="map-widget__btn map-widget__btn--active" data-regions="on">Regions shown</button></div>'
+          : "");
       L.DomEvent.disableClickPropagation(div);
       div.querySelectorAll("[data-mode]").forEach((btn) => {
         btn.addEventListener("click", () => {
@@ -488,10 +553,56 @@ function buildLayerControl() {
           setBasemap(btn.dataset.basemap);
         });
       });
+      const regionsBtn = div.querySelector("[data-regions]");
+      if (regionsBtn) {
+        regionsBtn.addEventListener("click", () => {
+          const showing = toggleRegionOverlay();
+          regionsBtn.classList.toggle("map-widget__btn--active", showing);
+          regionsBtn.textContent = showing ? "Regions shown" : "Regions hidden";
+        });
+      }
       return div;
     },
   });
   MAP.addControl(new Control({ position: "topright" }));
+}
+
+// ---------------------------------------------------------------------------
+// Region overlay (statewide map only) -- dashed boundary + label per
+// discovered region, clickable through to that region's dedicated page.
+// ---------------------------------------------------------------------------
+function drawRegionOverlays(regions, opts) {
+  if (!MAP || !regions || !regions.length) return;
+  opts = opts || {};
+  const linkBase = opts.linkBase || "regions/";
+  if (REGION_LAYER) MAP.removeLayer(REGION_LAYER);
+  REGION_LAYER = L.layerGroup();
+  regions.forEach((r) => {
+    const latlngs = r.polygon.map((p) => [p[0], p[1]]);
+    const poly = L.polygon(latlngs, {
+      color: CONFIG.colors.regionStroke,
+      weight: 1.5,
+      dashArray: "6 5",
+      fillColor: CONFIG.colors.regionStroke,
+      fillOpacity: 0.05,
+    });
+    poly.bindTooltip(r.name + " — explore this region →", { sticky: true, className: "region-tooltip" });
+    poly.on("click", () => { window.location.href = linkBase + r.id + "/"; });
+    REGION_LAYER.addLayer(poly);
+
+    const label = L.marker(r.centroid, {
+      icon: L.divIcon({ className: "region-label", html: "<span>" + escapeHtml(r.name) + "</span>", iconSize: [1, 1] }),
+    });
+    label.on("click", () => { window.location.href = linkBase + r.id + "/"; });
+    REGION_LAYER.addLayer(label);
+  });
+  REGION_LAYER.addTo(MAP);
+}
+function toggleRegionOverlay() {
+  if (!REGION_LAYER) return false;
+  if (MAP.hasLayer(REGION_LAYER)) { MAP.removeLayer(REGION_LAYER); return false; }
+  MAP.addLayer(REGION_LAYER);
+  return true;
 }
 
 function buildInspectControl() {
@@ -501,8 +612,8 @@ function buildInspectControl() {
       div.innerHTML =
         '<label class="map-widget__toggle"><input type="checkbox" id="inspect-toggle" /> Inspect area</label>' +
         '<div class="map-widget__radius" id="inspect-radius-wrap" hidden>' +
-        '<input type="range" id="inspect-radius" min="' + CONFIG.radiusMin + '" max="' + CONFIG.radiusMax + '" step="' + CONFIG.radiusStep + '" value="' + INSPECT_RADIUS + '" />' +
-        '<span id="inspect-radius-label">' + INSPECT_RADIUS + " mi</span></div>";
+        '<input type="range" id="inspect-radius" min="' + CONFIG.radiusMinKm + '" max="' + CONFIG.radiusMaxKm + '" step="' + CONFIG.radiusStepKm + '" value="' + INSPECT_RADIUS + '" />' +
+        '<span id="inspect-radius-label">' + INSPECT_RADIUS + " km</span></div>";
       L.DomEvent.disableClickPropagation(div);
       return div;
     },
@@ -523,7 +634,7 @@ function buildInspectControl() {
     if (radius) {
       radius.addEventListener("input", () => {
         INSPECT_RADIUS = parseFloat(radius.value);
-        label.textContent = INSPECT_RADIUS + " mi";
+        label.textContent = INSPECT_RADIUS + " km";
         if (INSPECT_CENTER) runInspect(INSPECT_CENTER);
       });
     }
@@ -753,7 +864,8 @@ function applyFilters() {
   if (INSPECT_ACTIVE && INSPECT_CENTER) runInspect(INSPECT_CENTER);
 }
 
-function initMap(listings, bounds) {
+function initMap(listings, bounds, opts) {
+  opts = opts || {};
   const container = document.getElementById("idaho-map");
   if (!container) return;
   ALL_LISTINGS = listings;
@@ -767,8 +879,11 @@ function initMap(listings, bounds) {
 
   POINTS_LAYER = L.layerGroup().addTo(MAP);
 
-  buildLayerControl();
+  buildLayerControl({ hasRegions: !!(opts.regions && opts.regions.length) });
   buildInspectControl();
+  if (opts.regions && opts.regions.length) {
+    drawRegionOverlays(opts.regions, { linkBase: opts.regionLinkBase });
+  }
 
   MAP.on("zoomend", rescalePointsForZoom);
   MAP.on("click", (e) => { if (INSPECT_ACTIVE) runInspect(e.latlng); });

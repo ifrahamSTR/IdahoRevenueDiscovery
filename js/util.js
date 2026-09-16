@@ -24,9 +24,9 @@ function escapeHtml(s) {
   return div.innerHTML;
 }
 
-// Haversine great-circle distance in miles.
-function distanceMiles(lat1, lng1, lat2, lng2) {
-  const R = 3958.7613;
+// Haversine great-circle distance.
+function distanceKm(lat1, lng1, lat2, lng2) {
+  const R = 6371.0088;
   const toRad = (d) => (d * Math.PI) / 180;
   const dLat = toRad(lat2 - lat1);
   const dLng = toRad(lng2 - lng1);
@@ -34,6 +34,9 @@ function distanceMiles(lat1, lng1, lat2, lng2) {
     Math.sin(dLat / 2) ** 2 +
     Math.cos(toRad(lat1)) * Math.cos(toRad(lat2)) * Math.sin(dLng / 2) ** 2;
   return 2 * R * Math.asin(Math.sqrt(a));
+}
+function distanceMiles(lat1, lng1, lat2, lng2) {
+  return distanceKm(lat1, lng1, lat2, lng2) / 1.60934;
 }
 
 function median(sortedArr) {

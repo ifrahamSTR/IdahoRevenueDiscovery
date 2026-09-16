@@ -188,7 +188,17 @@ img { max-width: 100%; display: block; }
 .inspect-stat strong { display: block; font-size: 1.1rem; color: var(--color-primary); }
 .inspect-stat span { font-size: 0.72rem; color: var(--color-text-muted); }
 .inspect-stat--above strong { color: var(--revenue-above-dark); }
+.inspect-stat--above2 strong { color: var(--brand-gold-dark); }
 .inspect-line { font-size: 0.85rem; margin-bottom: 6px; }
+.inspect-compare-table { margin: 10px 0; border-top: var(--hairline); }
+.inspect-compare-row { display: grid; grid-template-columns: 1fr auto auto; gap: 8px; align-items: baseline; padding: 5px 0; border-bottom: var(--hairline); font-size: 0.82rem; }
+.inspect-compare-row__label { color: var(--color-text-muted); }
+.inspect-compare-row__local { font-weight: 700; color: var(--color-text); text-align: right; }
+.inspect-compare-row__state { color: var(--color-text-muted); font-size: 0.76rem; text-align: right; white-space: nowrap; }
+.inspect-chip-group { margin-top: 10px; }
+.inspect-chip-group__label { display: block; font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.03em; color: var(--color-text-muted); margin-bottom: 4px; }
+.inspect-chip-row { display: flex; flex-wrap: wrap; gap: 5px; }
+.inspect-chip { font-size: 0.74rem; background: var(--surface-tint-strong); color: var(--color-primary); padding: 2px 8px; border-radius: 999px; font-weight: 600; white-space: nowrap; }
 .inspect-list-title { font-size: 0.78rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.03em; color: var(--color-text-muted); margin: 10px 0 4px; }
 .inspect-list { list-style: none; margin: 0; padding: 0; max-height: 220px; overflow-y: auto; }
 .inspect-list__item { display: flex; justify-content: space-between; gap: 8px; padding: 6px 4px; font-size: 0.82rem; border-bottom: var(--hairline); cursor: pointer; }
@@ -230,8 +240,52 @@ img { max-width: 100%; display: block; }
 .popup-chips { display: flex; flex-wrap: wrap; gap: 4px; margin-bottom: 8px; }
 .popup-chip { font-size: 0.7rem; background: var(--surface-tint-strong); color: var(--color-primary); padding: 2px 7px; border-radius: 999px; font-weight: 600; }
 .popup-meta { font-size: 0.75rem; color: var(--color-text-muted); margin-bottom: 6px; }
-.popup-link { font-size: 0.82rem; font-weight: 600; }
+.popup-link {
+  display: inline-block; font-size: 0.85rem; font-weight: 700; text-decoration: none;
+  background: var(--color-primary); color: white; padding: 8px 14px; border-radius: 7px; margin-top: 2px;
+}
+.popup-link:hover { background: var(--brand-green-dark); }
 .leaflet-tooltip { font-size: 0.8rem; line-height: 1.4; }
+
+/* ==== Region overlay (statewide map) ==== */
+.region-tooltip { font-weight: 600; font-size: 0.82rem; }
+.region-label { pointer-events: auto; cursor: pointer; }
+.region-label span {
+  display: inline-block; white-space: nowrap; transform: translate(-50%, -50%);
+  background: rgba(255,255,255,0.88); color: #0f6e93; border: 1px solid rgba(15,110,147,0.35);
+  font-size: 0.74rem; font-weight: 700; padding: 2px 7px; border-radius: 5px; box-shadow: 0 1px 2px rgba(0,0,0,0.12);
+}
+
+/* ==== Property detail modal ==== */
+.property-modal { position: fixed; inset: 0; z-index: 1000; display: none; align-items: center; justify-content: center; padding: 24px; }
+.property-modal--open { display: flex; }
+.property-modal__backdrop { position: absolute; inset: 0; background: rgba(11,20,17,0.55); }
+.property-modal__panel {
+  position: relative; z-index: 1; max-width: 340px; width: 100%; max-height: 88vh; overflow-y: auto;
+  background: var(--color-surface); border-radius: var(--radius); box-shadow: 0 20px 60px rgba(0,0,0,0.35);
+}
+.property-modal__close {
+  position: absolute; top: 8px; right: 10px; z-index: 2; width: 30px; height: 30px; border-radius: 50%;
+  border: none; background: rgba(255,255,255,0.9); color: var(--color-primary); font-size: 1.3rem; line-height: 1;
+  cursor: pointer; box-shadow: 0 1px 4px rgba(0,0,0,0.25);
+}
+.property-modal .popup-media { height: 200px; }
+.property-modal .leaflet-popup-content-wrapper { border-radius: 0; }
+
+/* ==== Region grid (statewide overview teaser cards) ==== */
+.region-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 16px; margin-top: 20px; }
+.region-card {
+  display: block; background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius);
+  box-shadow: var(--shadow); padding: 18px; text-decoration: none; color: inherit; transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+.region-card:hover { transform: translateY(-2px); box-shadow: 0 6px 18px rgba(7,86,70,0.14); }
+.region-card__name { font-weight: 700; color: var(--color-primary); font-size: 1.05rem; margin-bottom: 10px; }
+.region-card__stats { display: flex; gap: 14px; margin-bottom: 10px; }
+.region-card__stat { display: flex; flex-direction: column; }
+.region-card__stat strong { font-size: 1rem; color: var(--color-text); }
+.region-card__stat span { font-size: 0.7rem; color: var(--color-text-muted); }
+.region-card__stat--above strong { color: var(--revenue-above-dark); }
+.region-card__cta { font-size: 0.82rem; font-weight: 600; color: var(--color-accent); }
 
 /* ==== Findings section ==== */
 .chart-card { background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius); padding: 16px; height: 300px; margin-top: 12px; }
@@ -242,6 +296,35 @@ img { max-width: 100%; display: block; }
 .finding-block:first-of-type { margin-top: 1.5rem; }
 .finding-block h3 { margin-bottom: 4px; }
 .finding-block__intro { max-width: 760px; color: var(--color-text); }
+
+/* ==== Region page: switcher + regulatory section ==== */
+.region-switch-row { display: flex; align-items: center; gap: 10px; margin-top: 18px; font-size: 0.88rem; color: var(--color-text-muted); }
+.region-switch-row select { padding: 6px 10px; border-radius: 6px; border: 1px solid var(--color-border); background: var(--color-surface); color: var(--color-text); font-size: 0.88rem; }
+
+.reg-summary-row { display: flex; align-items: center; gap: 12px; margin: 18px 0 8px; }
+.reg-tier { display: inline-block; font-weight: 700; font-size: 0.9rem; padding: 5px 14px; border-radius: 999px; }
+.reg-tier--permissive { background: var(--revenue-above-bg); color: var(--revenue-above-dark); }
+.reg-tier--moderate { background: var(--accent-tint-strong); color: var(--brand-gold-dark); }
+.reg-tier--restrictive { background: color-mix(in srgb, var(--color-danger) 14%, white); color: var(--color-danger); }
+.reg-tier--uncertain { background: var(--surface-tint-strong); color: var(--color-text-muted); }
+.reg-verified { font-size: 0.82rem; color: var(--color-text-muted); }
+.reg-tier-note { max-width: 800px; margin-bottom: 18px; }
+.reg-jurisdictions { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; margin: 8px 0 20px; }
+.reg-jurisdiction { background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius); padding: 16px 18px; }
+.reg-jurisdiction h4 { margin: 0 0 8px; text-transform: none; letter-spacing: 0; font-size: 1rem; color: var(--color-primary); }
+.reg-jurisdiction p { font-size: 0.9rem; margin: 0; }
+.reg-block { margin: 0 0 20px; max-width: 900px; }
+.reg-block h4 { text-transform: none; letter-spacing: 0; font-size: 1rem; color: var(--color-primary); margin-bottom: 6px; }
+.reg-block p { font-size: 0.92rem; }
+.reg-block--state { background: var(--surface-tint); border-radius: var(--radius); padding: 14px 18px; }
+.reg-uncertainty { background: var(--accent-tint); border-left: 3px solid var(--brand-gold); border-radius: 6px; padding: 12px 18px; margin: 0 0 20px; max-width: 900px; }
+.reg-uncertainty h4 { margin: 0 0 8px; text-transform: none; letter-spacing: 0; font-size: 0.92rem; color: var(--brand-gold-dark); }
+.reg-uncertainty ul { margin: 0; padding-left: 1.2em; font-size: 0.86rem; }
+.reg-uncertainty li { margin-bottom: 4px; }
+.reg-sources summary { cursor: pointer; font-weight: 700; color: var(--color-primary); padding: 8px 0; }
+.reg-sources ul { margin: 8px 0 0; padding-left: 1.2em; font-size: 0.84rem; }
+.reg-sources li { margin-bottom: 5px; word-break: break-word; }
+.reg-empty { color: var(--color-text-muted); }
 
 /* ==== Methodology ==== */
 .methodology-list { padding-left: 1.2em; color: var(--color-text); }
