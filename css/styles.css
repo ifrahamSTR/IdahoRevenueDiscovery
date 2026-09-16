@@ -301,29 +301,25 @@ img { max-width: 100%; display: block; }
 .region-switch-row { display: flex; align-items: center; gap: 10px; margin-top: 18px; font-size: 0.88rem; color: var(--color-text-muted); }
 .region-switch-row select { padding: 6px 10px; border-radius: 6px; border: 1px solid var(--color-border); background: var(--color-surface); color: var(--color-text); font-size: 0.88rem; }
 
-.reg-summary-row { display: flex; align-items: center; gap: 12px; margin: 18px 0 8px; }
-.reg-tier { display: inline-block; font-weight: 700; font-size: 0.9rem; padding: 5px 14px; border-radius: 999px; }
-.reg-tier--permissive { background: var(--revenue-above-bg); color: var(--revenue-above-dark); }
-.reg-tier--moderate { background: var(--accent-tint-strong); color: var(--brand-gold-dark); }
-.reg-tier--restrictive { background: color-mix(in srgb, var(--color-danger) 14%, white); color: var(--color-danger); }
-.reg-tier--uncertain { background: var(--surface-tint-strong); color: var(--color-text-muted); }
-.reg-verified { font-size: 0.82rem; color: var(--color-text-muted); }
-.reg-tier-note { max-width: 800px; margin-bottom: 18px; }
-.reg-jurisdictions { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; margin: 8px 0 20px; }
-.reg-jurisdiction { background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius); padding: 16px 18px; }
-.reg-jurisdiction h4 { margin: 0 0 8px; text-transform: none; letter-spacing: 0; font-size: 1rem; color: var(--color-primary); }
-.reg-jurisdiction p { font-size: 0.9rem; margin: 0; }
-.reg-block { margin: 0 0 20px; max-width: 900px; }
-.reg-block h4 { text-transform: none; letter-spacing: 0; font-size: 1rem; color: var(--color-primary); margin-bottom: 6px; }
-.reg-block p { font-size: 0.92rem; }
-.reg-block--state { background: var(--surface-tint); border-radius: var(--radius); padding: 14px 18px; }
-.reg-uncertainty { background: var(--accent-tint); border-left: 3px solid var(--brand-gold); border-radius: 6px; padding: 12px 18px; margin: 0 0 20px; max-width: 900px; }
-.reg-uncertainty h4 { margin: 0 0 8px; text-transform: none; letter-spacing: 0; font-size: 0.92rem; color: var(--brand-gold-dark); }
-.reg-uncertainty ul { margin: 0; padding-left: 1.2em; font-size: 0.86rem; }
-.reg-uncertainty li { margin-bottom: 4px; }
-.reg-sources summary { cursor: pointer; font-weight: 700; color: var(--color-primary); padding: 8px 0; }
-.reg-sources ul { margin: 8px 0 0; padding-left: 1.2em; font-size: 0.84rem; }
-.reg-sources li { margin-bottom: 5px; word-break: break-word; }
+/* Ported verbatim (class names + rules) from the Charlotte report's own
+   Section 5 STR Regulations card, so every STR Search market report --
+   Charlotte, Idaho's ten regions, and whatever comes after -- presents
+   regulatory findings in exactly the same shape. */
+.regs-card { background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius); padding: 1.25rem 1.5rem; box-shadow: var(--shadow); }
+.regs-card__tier { display: inline-flex; align-items: center; gap: 8px; font-weight: 700; font-size: 1.05rem; padding: 6px 16px; border-radius: 999px; margin-bottom: 10px; background: color-mix(in srgb, var(--brand-green) 12%, white); color: var(--brand-green-dark); }
+.regs-card__tier-dot { width: 10px; height: 10px; border-radius: 50%; background: var(--brand-green); flex-shrink: 0; }
+.regs-card__verified { font-size: 0.82rem; color: var(--color-text-muted); margin-left: 4px; }
+.regs-card__summary { margin: 0 0 4px; max-width: 780px; }
+.regs-card .dd-rows { display: flex; flex-direction: column; gap: 0.7rem; margin-top: 16px; }
+.regs-card .dd-row { display: grid; grid-template-columns: 190px 1fr; gap: 4px 16px; padding-bottom: 0.6rem; border-bottom: 1px dashed var(--color-border); }
+.regs-card .dd-row:last-child { border-bottom: none; padding-bottom: 0; }
+.regs-card .dd-row__label { font-weight: 600; font-size: 0.85rem; color: var(--color-primary); }
+.regs-card .dd-row__value { margin: 0; color: var(--color-text-muted); font-size: 0.92rem; }
+.regs-card ul { margin: 0; padding-left: 1.2em; }
+.regs-card li { margin-bottom: 4px; }
+.regs-card li:last-child { margin-bottom: 0; }
+.regs-card__sources { margin-top: 16px; padding-top: 12px; border-top: var(--hairline); font-size: 0.88rem; color: var(--color-text-muted); }
+.regs-card__sources a { color: var(--color-text-muted); }
 .reg-empty { color: var(--color-text-muted); }
 
 /* ==== Methodology ==== */

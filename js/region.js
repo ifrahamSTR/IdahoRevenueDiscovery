@@ -25,12 +25,16 @@ function boundsFor(listings, padDeg) {
   };
 }
 
-function tierBadgeClass(tier) {
-  const t = (tier || "").toLowerCase();
-  if (t.indexOf("permissive") !== -1) return "reg-tier--permissive";
-  if (t.indexOf("restrictive") !== -1) return "reg-tier--restrictive";
-  if (t.indexOf("moderate") !== -1) return "reg-tier--moderate";
-  return "reg-tier--uncertain";
+// Same card shape as the Charlotte report's Section 5 (STR Regulations):
+// one tier badge, one summary paragraph, three labeled dd-rows (Permit /
+// Residency, Operating Limits, Investor Notes), a compact one-line source
+// credit. See css/styles.css's "Ported verbatim ... regs-card" block.
+function ddRow(label, items) {
+  if (!items || !items.length) return "";
+  return (
+    '<div class="dd-row"><span class="dd-row__label">' + escapeHtml(label) + '</span>' +
+    '<div class="dd-row__value"><ul>' + items.map((i) => "<li>" + i + "</li>").join("") + "</ul></div></div>"
+  );
 }
 
 function renderRegulatory(reg) {
@@ -40,48 +44,21 @@ function renderRegulatory(reg) {
     host.innerHTML = '<p class="reg-empty">Regulatory research for this region has not been published yet.</p>';
     return;
   }
-  let html = "";
-  html += '<div class="reg-summary-row">';
-  html += '<span class="reg-tier ' + tierBadgeClass(reg.tier) + '">' + escapeHtml(reg.tier || "Uncertain") + "</span>";
-  html += '<span class="reg-verified">Verified ' + escapeHtml(reg.verifiedDate || "") + "</span>";
+  let html = '<div class="regs-card">';
+  html += '<div class="regs-card__tier"><span class="regs-card__tier-dot"></span>' + escapeHtml(reg.tier || "Uncertain") + "</div>";
+  html += '<span class="regs-card__verified">Verified ' + escapeHtml(reg.verifiedDate || "") + "</span>";
+  html += '<p class="regs-card__summary">' + reg.summary + "</p>";
+  html += '<div class="dd-rows">';
+  html += ddRow("Permit / Residency", reg.permitResidency);
+  html += ddRow("Operating Limits", reg.operatingLimits);
+  html += ddRow("Investor Notes", reg.investorNotes);
   html += "</div>";
-  if (reg.tierNote) html += '<p class="reg-tier-note">' + reg.tierNote + "</p>";
-
-  if (reg.jurisdictions && reg.jurisdictions.length) {
-    html += '<div class="reg-jurisdictions">';
-    reg.jurisdictions.forEach((j) => {
-      html += '<div class="reg-jurisdiction">';
-      html += "<h4>" + escapeHtml(j.name) + "</h4>";
-      html += "<p>" + j.summary + "</p>";
-      html += "</div>";
-    });
-    html += "</div>";
-  }
-
-  if (reg.taxes) {
-    html += '<div class="reg-block"><h4>Taxes</h4><p>' + reg.taxes + "</p></div>";
-  }
-  if (reg.stateLawNote) {
-    html += '<div class="reg-block reg-block--state"><h4>Idaho state law context</h4><p>' + reg.stateLawNote + "</p></div>";
-  }
-  if (reg.hoaNote) {
-    html += '<div class="reg-block"><h4>HOA &amp; other notes</h4><p>' + reg.hoaNote + "</p></div>";
-  }
-
-  if (reg.uncertainty && reg.uncertainty.length) {
-    html += '<div class="reg-uncertainty"><h4>Uncertainty &amp; verify-before-relying-on flags</h4><ul>';
-    reg.uncertainty.forEach((u) => { html += "<li>" + u + "</li>"; });
-    html += "</ul></div>";
-  }
-
   if (reg.sources && reg.sources.length) {
-    html += '<details class="reg-sources"><summary>Sources (' + reg.sources.length + ")</summary><ul>";
-    reg.sources.forEach((s) => {
-      html += '<li><a href="' + escapeHtml(s.url) + '" target="_blank" rel="noopener">' + escapeHtml(s.title) + "</a></li>";
-    });
-    html += "</ul></details>";
+    html += '<p class="regs-card__sources"><strong>Official sources:</strong> ';
+    html += reg.sources.map((s) => '<a href="' + escapeHtml(s.url) + '" target="_blank" rel="noopener">' + escapeHtml(s.title) + "</a>").join(" &middot; ");
+    html += "</p>";
   }
-
+  html += "</div>";
   host.innerHTML = html;
 }
 
