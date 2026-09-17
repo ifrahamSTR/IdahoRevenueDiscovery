@@ -1,272 +1,279 @@
 {
   "island-park": {
-    "tier": "Investor-Friendly (Statewide Preemption)",
-    "verifiedDate": "2026-09-16",
-    "summary": "Island Park sits almost entirely in unincorporated Fremont County (the incorporated city itself is a famously thin ~500-ft-wide, 33-mile strip). Idaho House Bill 583 (effective July 1, 2026) now preempts the county's former commercial-permit regime for STRs, leaving one of the lightest-touch regulatory environments in the state &mdash; the main live risk is private HOA covenants, not government rules.",
+    "tier": "Investor-Friendly",
+    "verifiedDate": "2026-09-17",
+    "summary": "Island Park splits between the City of Island Park (a famously narrow ~500-foot-wide, 33-mile-long strip) and unincorporated Fremont County, which covers nearly all of the Henry's Lake and Island Park Reservoir subdivision corridor. Idaho HB 583 (effective July 1, 2026) now bars both governments from requiring an STR-specific license, permit, fee, or registration, from capping STR counts, and from mandating owner-occupancy &mdash; the county's old $200/$500 Class 1/2 lodging-permit program is no longer legally enforceable, though its application materials may still be nominally posted. The one confirmed, real constraint is private: a Fremont County HOA can still enforce a pre-existing rental ban, as the Idaho Supreme Court just confirmed in a case decided in this exact area.",
     "permitResidency": [
-      "Permit / license required? No, as of July 1, 2026 &mdash; state law bars any county STR-specific license, fee, permit, certification, or registration. Fremont County previously ran a Class I commercial Transient Lodging Permit ($200/$500 by guest capacity, plus septic/well inspection every 2 years); this is now superseded, though it is unconfirmed whether the county has formally struck it from its code.",
-      "Primary residence required? No &mdash; owner-occupancy mandates are barred statewide; whole-home, non-owner-occupied STRs are fully permitted."
+      "Permit / license required? No, as of July 1, 2026 &mdash; Fremont County's former Home Occupation Transient Rental Permit (Class 1: up to 15 guests, $200/yr; Class 2: 16&ndash;30 guests, $500/yr, both with biennial septic/well inspections) is no longer a legally enforceable precondition to operate. The county's own application/renewal PDFs may still be posted online; treat them as stale, not current law, and confirm directly with Fremont County Planning &amp; Building before assuming any fee is still owed. No dedicated city-level STR ordinance was found for Island Park distinct from the county's.",
+      "Primary residence required? No &mdash; owner-occupancy mandates are barred statewide, and none was found pre-HB 583 either."
     ],
     "operatingLimits": [
-      "No caps, quotas, or unit-per-parcel limits &mdash; density and spacing restrictions are barred by state law.",
-      "Occupancy: only generally-applicable International Building Code residential limits may be enforced, the same as any home.",
-      "Taxes: 6% Idaho sales tax + 2% state Travel &amp; Convention Tax = 8% total. No local-option or auditorium-district tax found for Island Park (zip 83429 shows the state rate only)."
+      "No caps, quotas, or day-limit restrictions &mdash; all barred by state law. Occupancy defaults to generally-applicable International Building Code limits. Septic and well inspections remain a real, separate diligence item: Idaho's statewide septic design standard sizes tanks by bedroom count, not by the large group sizes some lake-corridor properties actually market and host, and this is unrelated to (and unaffected by) HB 583's STR-permit preemption.",
+      "Taxes: 6% Idaho sales tax + 2% state Travel &amp; Convention Tax = 8% total. No local-option or auditorium-district tax applies &mdash; Island Park does not appear on Idaho's resort-city local-option-tax list, and Fremont County has none either."
     ],
     "investorNotes": [
-      "STRs are now a \"non-transient residential use\" by state law &mdash; allowed anywhere ordinary residential use is allowed, no special resort/recreation zoning category.",
-      "Required safety equipment only: smoke alarms, CO detectors, fire extinguisher, egress ladders. No STR-specific inspection may be required.",
-      "Enforcement is now complaint-driven (noise/nuisance/parking) &mdash; the Idaho Association of Counties has publicly noted that without a registry, counties can no longer proactively verify safety compliance.",
-      "HOA risk is real and litigated here: <em>North Henry's Lake v. Norton</em> (Idaho Supreme Court, 2026) upheld a pre-existing Fremont County HOA's STR ban under Idaho Code &sect;55-3211 (new bans need the owner's written consent; old ones are grandfathered) &mdash; check covenants per property.",
-      "Airbnb/Vrbo auto-collect and remit state taxes on platform bookings; direct-booking hosts must register with the Idaho State Tax Commission themselves."
+      "Idaho Code &sect;67-6539 (as amended by HB 583) bars STR-specific licenses, fees, permits, caps, and owner-occupancy mandates statewide &mdash; it does not touch generally-applicable septic, well, zoning, or building-code rules, which still fully apply.",
+      "A specific Henry's Lake-area HOA ban was just litigated and upheld in <em>North Henry's Lake HOA v. Norton</em> (Idaho Supreme Court, Jan. 2026): a pre-2016 rental ban survives against non-consenting owners under Idaho Code &sect;55-3211, but a subsequent owner who never consented can still win the right to operate &mdash; check the specific subdivision's CC&amp;R and consent history, not just jurisdiction, before assuming legality.",
+      "Confirm which side of the city/county line a specific parcel sits on before relying on either code &mdash; both now land on the same permissive state-law answer for STR legality, but zoning specifics can still differ.",
+      "Airbnb/Vrbo auto-collect and remit state taxes on platform bookings; direct-booking hosts must register with the Idaho State Tax Commission and self-file monthly (Form 1152)."
     ],
     "sources": [
       {"title": "Idaho Code §67-6539", "url": "https://legislature.idaho.gov/statutesrules/idstat/title67/t67ch65/sect67-6539/"},
-      {"title": "Idaho Code §55-3211 (HOA rental restrictions)", "url": "https://law.justia.com/codes/idaho/title-55/chapter-32/section-55-3211/"},
-      {"title": "Idaho State Tax Commission — Travel & Convention Tax", "url": "https://tax.idaho.gov/taxes/taxes-on-sales/travel-and-convention-tax/"},
-      {"title": "Fremont County Planning & Building", "url": "https://www.fremontcountyid.gov/196/Planning-Building"}
+      {"title": "North Henry's Lake HOA v. Norton, Idaho Supreme Court, Docket 51990 (2026)", "url": "https://law.justia.com/cases/idaho/supreme-court-civil/2026/51990.html"},
+      {"title": "Idaho Code §55-3211 (HOA rental-restriction statute)", "url": "https://www.communitypay.us/laws/idaho/statute/idaho-code-55-3211/"},
+      {"title": "Idaho State Tax Commission — Travel and Convention Tax", "url": "https://tax.idaho.gov/taxes/taxes-on-sales/travel-and-convention-tax/"},
+      {"title": "LocalNews8/KIFI — Idaho lawmakers move to curb local control over short-term rentals", "url": "https://localnews8.com/news/2026/02/10/idaho-lawmakers-move-to-curb-local-control-over-short-term-rentals/"}
     ]
   },
 
   "teton-valley": {
-    "tier": "Investor-Friendly, Converging Across Jurisdictions",
-    "verifiedDate": "2026-09-16",
-    "summary": "Teton County, Driggs, Victor, and Tetonia each ran different STR regimes before 2026 &mdash; Driggs and Victor materially stricter than the county or Tetonia. Idaho House Bill 583 (effective July 1, 2026) has now largely flattened those differences into a single permissive state floor; local lodging-tax rate is the main thing that still varies by jurisdiction.",
+    "tier": "Verify / Heavier Constraints",
+    "verifiedDate": "2026-09-17",
+    "summary": "Driggs, Victor, and Tetonia all opposed HB 583 through the Idaho Resort Cities Coalition, and 2.5 months after the law's July 1, 2026 effective date, Driggs and Victor still publicly display and appear to be collecting fees under now-preempted STR permit and business-license programs &mdash; a real gap between the law on the books and what's actually enforced on the ground. Unincorporated Teton County is murkier still: the county's own FAQ says it has no STR zoning requirements at all, while independent secondary sources describe a much more built-out registration and septic-based occupancy-cap system in its Land Development Code that could not be verified against primary text.",
     "permitResidency": [
-      "Permit / license required? No, statewide, as of July 1, 2026. Driggs previously charged an $80 initial / $50 annual STR permit with a mandatory Fire Marshal inspection; Victor required its own STR business license. Both are being wound down &mdash; Driggs held a June 2026 hearing to rewrite its code, though it's unconfirmed whether either city has fully scrubbed the old fee from its books.",
-      "Primary residence required? No, anywhere in the valley &mdash; owner-occupancy mandates are barred statewide."
+      "Permit / license required? On paper, no, as of July 1, 2026. In practice, Driggs' website still shows an $80 initial/$50 annual STR permit with mandatory Fire Marshal and Building Inspector inspection, and Victor's site still shows a $100/$50 per-property Business License &mdash; both appear directly barred by Idaho Code &sect;67-6539(5), and neither city has updated its published materials. Tetonia has no STR-specific ordinance found at all. Unincorporated Teton County's own FAQ says it has no zoning requirements for short- or long-term rentals (except campgrounds/B&amp;Bs), which conflicts with secondary-source descriptions of a county STR registration and septic-capacity permit system &mdash; unresolved, verify directly with Teton County Planning &amp; Zoning.",
+      "Primary residence required? No, anywhere in the valley &mdash; barred statewide regardless of what any city website currently displays."
     ],
     "operatingLimits": [
-      "No numeric caps &mdash; Driggs' roughly one-STR-per-property limit (2022 workforce-housing ordinance) is preempted.",
-      "Occupancy: generally-applicable IBC-based limits only.",
-      "Taxes: 8% state baseline (6% sales + 2% Travel &amp; Convention). Driggs and Victor each add an 8% local lodging tax (Driggs raised its rate January 2026) &mdash; roughly 16% combined in those two cities. Unincorporated Teton County and Tetonia show no local-option tax, likely 8% total."
+      "Driggs' RV/tent/temporary-shelter ban for STR use is still posted and its legal status post-HB 583 is genuinely unresolved. Any occupancy cap tied to septic capacity (as opposed to generic IBC-based limits) in unincorporated Teton County is very likely preempted, but this could not be confirmed against the county's own Land Development Code text.",
+      "Taxes: state 8% baseline. Driggs and Victor both raised their lodging local-option tax to 8% (from 6%) in 2025&ndash;2026 ballot measures &mdash; roughly 16% combined in both cities. Tetonia adopted its first-ever 5% lodging tax effective Jan. 2026 &mdash; roughly 13% combined. Unincorporated Teton County has no local-option tax at all &mdash; roughly 8% total, a meaningful gap from the three cities."
     ],
     "investorNotes": [
-      "Teton County's own Planning &amp; Zoning FAQ now shows no zoning permit requirement for short- or long-term rentals except Bed &amp; Breakfasts/campgrounds &mdash; consistent with winding the old septic-tied county permit down.",
-      "Required safety equipment only (smoke alarms, CO/fire extinguisher per floor, escape ladders); no STR-specific inspection may be mandated statewide.",
-      "Hailey-style unit-splitting rules don't apply here, but Driggs' AMD26-2 rewrite (June/July 2026) is worth re-checking for final adopted text.",
-      "HOA covenants are unaffected by state law: Idaho Code &sect;55-3211 requires written owner consent for new rental bans (pre-existing restrictions remain enforceable). Most Teton Valley subdivisions predate STRs and don't restrict them (e.g. Shoshoni Plains near Grand Targhee explicitly allows rentals), but this varies by subdivision."
+      "Idaho Code &sect;67-6539 (HB 583) bars STR-specific licenses, fees, permits, caps, and owner-occupancy mandates statewide, with no population threshold &mdash; Driggs and Victor's still-posted fee schedules are very likely legally unenforceable today, but the cities' active political opposition (both mayors publicly fought the law) makes this a live compliance gap worth confirming directly before assuming a fee-free path.",
+      "Grand Targhee Resort's actual base area sits in Alta, <strong>Wyoming</strong>, not Idaho &mdash; only the Idaho-side access corridor and any Idaho-side cabins fall under Teton County, ID rules; verify exact parcel jurisdiction via county GIS before assuming a 'Targhee-area' listing is Idaho-regulated.",
+      "Idaho Code &sect;55-3211 grandfathers pre-existing HOA rental bans (written consent required for new ones) &mdash; Teton Springs and other golf/resort subdivisions may carry their own STR restrictions independent of the permissive state law.",
+      "This region's local governments were the most vocal statewide opponents of HB 583 &mdash; treat it as more likely than other regions to see future litigation, further legislation, or continued informal non-enforcement disputes."
     ],
     "sources": [
       {"title": "Idaho Code §67-6539", "url": "https://legislature.idaho.gov/statutesrules/idstat/title67/t67ch65/sect67-6539/"},
       {"title": "City of Driggs — Short-Term Rental", "url": "https://driggsidaho.org/departments/city-clerk/short-term-rental/"},
       {"title": "City of Victor — Short Term Rental Information", "url": "https://victoridaho.gov/departments/city-clerk/str"},
-      {"title": "Teton County Planning & Zoning FAQs", "url": "https://tetoncountyidaho.gov/departments/planning_zoning_department/faqs.php"}
+      {"title": "Teton County Planning & Zoning FAQs", "url": "https://tetoncountyidaho.gov/departments/planning_zoning_department/faqs.php"},
+      {"title": "Teton Valley News — House passes bill to limit local short-term rental regulations", "url": "https://www.tetonvalleynews.net/news/cities_and_county/house-passes-bill-to-limit-local-short-term-rental-regulations/article_88216321-3914-40d3-8a71-0ec2739f7ad7.html"},
+      {"title": "Idaho State Tax Commission — Travel and Convention Tax", "url": "https://tax.idaho.gov/taxes/taxes-on-sales/travel-and-convention-tax/"}
     ]
   },
 
   "mccall-west-central-mountains": {
-    "tier": "Investor-Friendly, Mid-Transition",
-    "verifiedDate": "2026-09-16",
-    "summary": "McCall ran the most detailed STR permit system found anywhere in this research &mdash; the 2026 legislature specifically targeted it. Donnelly, Cascade, and unincorporated Valley County were always lighter-touch. All four are now bound by the same permissive state floor, but McCall's own repeal is still visibly in progress, so this region reads as transitional rather than settled.",
+    "tier": "Investor-Friendly",
+    "verifiedDate": "2026-09-17",
+    "summary": "McCall &mdash; historically the region's most restrictive jurisdiction, with a detailed permit, occupancy-formula, and inspection regime &mdash; formally repealed its equivalent STR provisions via Ordinance 1038 on July 2, 2026, one day after Idaho HB 583 took effect. Donnelly and unincorporated Valley County never adopted a comparably strict regime and appear not to have yet issued a formal HB-583 conformance ordinance, but state preemption applies regardless of whether local code text has caught up. Cascade's STR-specific rules could not be confirmed from its inaccessible code, though a business-license/tax-permit process clearly exists there.",
     "permitResidency": [
-      "Permit / license required? No, statewide, as of July 1, 2026 &mdash; though McCall's own site confirms it \"will be repealing many of the codes regarding Short-Term Rentals ... effective July 1, 2026,\" implying the old permit (business license + signed compliance declaration) was still active up to that date. Donnelly's per-parcel business license and the county's administrative permit are also now preempted; no confirmation either has formally amended its code.",
-      "Primary residence required? No &mdash; none of the four jurisdictions ever required owner-occupancy, and it's barred statewide regardless."
+      "Permit / license required? No, as of July 1, 2026, confirmed formally in McCall via City Council Ordinance 1038 (July 2, 2026), which repealed the city's STR-specific occupancy limits, conditional-use permitting, ADU owner-occupancy rule, and mandatory pre-license inspection. McCall's own STR webpage still lags this ordinance and describes the old rules in future tense &mdash; treat the ordinance, not the webpage, as authoritative. Donnelly's code (Ch. 18.85) and Valley County's code (&sect;9-4-10) still describe a permit/conditional-use process on paper, with no confirmed 2026 conformance amendment found for either &mdash; both are very likely unenforceable now regardless, but verify directly given the lack of formal repeal.",
+      "Primary residence required? No, anywhere in the region &mdash; McCall's ADU-specific owner-occupancy rule was expressly repealed by Ordinance 1038, and none of the other three jurisdictions ever required it."
     ],
     "operatingLimits": [
-      "No cap, waitlist, or lottery was ever found for McCall despite that being a common assumption &mdash; it was a permit-for-every-operator system, not scarcity-based, and is preempted either way.",
-      "McCall's old occupancy formula (bedrooms×2+2, capped at 10 without a conditional-use permit) and its annual fire-safety inspection are being eliminated.",
-      "Taxes: 8% state baseline. McCall adds a 7% city Local Option Tax (roughly 15% combined) &mdash; the highest of the four. Donnelly adds 4% (roughly 12%), Cascade 1% (roughly 9%). Unincorporated Valley County shows no local add-on."
+      "McCall's old bedrooms&times;2+2 occupancy formula with an 11-guest conditional-use trigger is repealed; any occupancy limit McCall keeps must now track the International Building Code instead. No numeric STR cap was ever found in any of the four jurisdictions.",
+      "Taxes: state 8% baseline. McCall adds a confirmed 7% Local Option Tax (1% general retail + 6% lodging-specific) &mdash; roughly 15% combined, the highest confirmed rate in this region and independently corroborated by two secondary tax guides. Cascade has an active Business License/LOT Permit process but its exact rate is unconfirmed. Donnelly and unincorporated Valley County show no confirmed lodging-specific local tax &mdash; only the 8% state baseline is certain for those two."
     ],
     "investorNotes": [
-      "McCall prevailed in a 2025 lawsuit upholding its old STR ordinance, then saw much of that same ordinance preempted by the legislature months later &mdash; an unusual sequence worth knowing about if researching the city's own public statements.",
-      "Cascade has the thinnest documentation of the four &mdash; no dedicated STR ordinance was found at all; treat it as the lightest-regulated of the group.",
-      "Required safety equipment only going forward (smoke alarms, extinguisher, CO detector, escape ladders); the old annual McCall Fire &amp; EMS inspection is being wound down.",
-      "The Payette Lake shoreline has numerous platted subdivisions with private CC&amp;Rs &mdash; HOA-level STR restrictions are a well-documented pattern in comparable mountain-lake markets and plausible here, though not individually verified."
+      "McCall actually won its own STR-ordinance lawsuit in district court in July 2025 (occupancy limits, parking rules, and inspection standards upheld as reasonable), only to see the legislature substantially moot those same provisions a year later via HB 583 &mdash; a reminder that a local litigation win doesn't insulate an ordinance from subsequent state preemption.",
+      "A same-named 'Ordinance 2026-02' STR result for 'Town of Cascade' found in some searches belongs to Cascade, <strong>Montana</strong>, not Cascade, Idaho &mdash; a naming trap worth flagging so it isn't miscited elsewhere.",
+      "Payette Lake shoreline subdivisions in McCall and Donnelly commonly carry private CC&amp;R rental restrictions entirely unaffected by HB 583 &mdash; per-parcel title review remains essential regardless of the favorable state and city law.",
+      "Idaho Code &sect;67-6539 bars STR-specific licenses/fees/permits/caps statewide &mdash; Donnelly and Valley County's still-published permit requirements are very likely dead letter even without a formal repeal ordinance, but confirm directly with each jurisdiction before assuming a fee-free path."
     ],
     "sources": [
-      {"title": "City of McCall — Short-Term Rentals", "url": "https://www.mccall.id.us/203/Short-Term-Rentals"},
       {"title": "Idaho Code §67-6539", "url": "https://legislature.idaho.gov/statutesrules/idstat/title67/t67ch65/sect67-6539/"},
-      {"title": "Valley County Code §9-4-10", "url": "https://codelibrary.amlegal.com/codes/valleycountyid/latest/valleycounty_id/0-0-0-15990"},
-      {"title": "City of Donnelly — Local Option Tax", "url": "https://cityofdonnelly.org/government/local-option-tax/"}
+      {"title": "City of McCall — Short-Term Rentals", "url": "https://www.mccall.id.us/203/Short-Term-Rentals"},
+      {"title": "City of McCall — Lodging Local Option Tax", "url": "https://www.mccall.id.us/198/Lodging-Local-Option-Tax"},
+      {"title": "Citizen Portal — McCall council adopts ordinance to conform city code to new state short-term rental law", "url": "https://citizenportal.ai/articles/8445791/Idaho/Valley-County/McCall/McCall-council-adopts-ordinance-to-conform-city-code-to-new-state-shortterm-rental-law"},
+      {"title": "Valley County Code §9-4-10, Short-Term Rentals", "url": "https://codelibrary.amlegal.com/codes/valleycountyid/latest/valleycounty_id/0-0-0-15990"},
+      {"title": "BoiseDev — Court sides with McCall on lawsuit over short-term rental rules", "url": "https://boisedev.com/2025/07/17/mccall-str-suit/"}
     ]
   },
 
   "coeur-dalene": {
-    "tier": "Investor-Friendly (Recently Deregulated)",
-    "verifiedDate": "2026-09-16",
-    "summary": "As recently as mid-2025, Coeur d'Alene ran a genuinely restrictive STR permit system with a 35-unit cap. A 2025 Idaho Supreme Court ruling and the 2026 state preemption law have since stripped that framework down; the region (Coeur d'Alene, Hayden, Post Falls, Harrison, and unincorporated Kootenai County) now reads uniformly permissive at the government level.",
+    "tier": "Investor-Friendly",
+    "verifiedDate": "2026-09-18",
+    "summary": "Coeur d'Alene's own annual STR permit ordinance is still fully codified &mdash; unchanged since 2017 and untouched by the city's most recent code update, six days after HB 583 took effect &mdash; but is very likely legally unenforceable under the new state preemption, and the city's public-facing STR web pages are currently offline entirely. Hayden, Post Falls, Harrison, and unincorporated Kootenai County show no dedicated restrictive STR ordinance at all. A widely-repeated '35-unit cap' claim for this region is a mix-up with Sandpoint, a different city in a different county, and should not be applied here.",
     "permitResidency": [
-      "Permit / license required? No, statewide, as of July 1, 2026 &mdash; Coeur d'Alene's own annual, non-transferable STR permit (parking plan, safety checklist, 24/7 responsible-party requirement) is preempted, though it's unconfirmed whether Council has finished a formal code rewrite. No dedicated STR ordinance was found for Hayden, Post Falls, or Harrison.",
-      "Primary residence required? No &mdash; Coeur d'Alene's ADU-specific owner-occupancy condition is preempted; no other jurisdiction in the cluster required it."
+      "Permit / license required? On paper, yes in Coeur d'Alene &mdash; an annual, non-transferable, per-dwelling STR permit (due March 1) with an annual self-inspection checklist, unchanged since 2017 and still on the books as of a July 2026 code update. This is very likely unenforceable under Idaho Code &sect;67-6539(5), but the city's own STR web pages currently return 404s, so what the city is telling the public today could not be confirmed &mdash; call the Coeur d'Alene Planning Department directly. No dedicated STR ordinance was found for Hayden, Post Falls, Harrison, or unincorporated Kootenai County.",
+      "Primary residence required? No, generally. Coeur d'Alene's code still contains an ADU-specific rule requiring the primary home or the ADU to be owner/family-occupied 6+ months/year before the other can operate short-term &mdash; explicitly the kind of 'owner occupation' condition HB 583 bars, and likely unenforceable now despite remaining codified."
     ],
     "operatingLimits": [
-      "Coeur d'Alene's 35-unit citywide cap on non-owner-occupied STRs (already recommended for removal by P&amp;Z in December 2025 following the Lava Hot Springs ruling) is now barred by state law regardless.",
-      "Occupancy: IBC-based limits only, applied the same as to any residence.",
-      "Taxes: 8% state baseline. Coeur d'Alene, Hayden, and Post Falls have no local-option lodging tax (population over the 10,000 resort-city threshold) &mdash; 8% total. Harrison, a qualifying resort city, layers a 1% Local Option Tax (roughly 9%, if lodging is included in that base)."
+      "Coeur d'Alene has no citywide numeric STR cap &mdash; the mayor has publicly confirmed this. (The often-cited '35-unit cap' belongs to Sandpoint, a different city in Bonner County, not this region &mdash; don't apply it here.) Coeur d'Alene's own occupancy limit is tied to its municipal 'family' definition rather than a stated IBC figure, a possible point of tension with the state law's IBC-based safe harbor.",
+      "Taxes: 8% state baseline (6% sales + 2% Travel &amp; Convention) applies in Coeur d'Alene, Hayden, and Post Falls &mdash; all three exceed Idaho's 10,000-population cap for resort-city local-option-tax eligibility, so no local add-on exists or is possible. Harrison, with a population under 300, does levy a confirmed 1% Local Option Tax &mdash; roughly 9% total there."
     ],
     "investorNotes": [
-      "Unincorporated Kootenai County has no STR-specific chapter found; vacation rentals appear to be treated as an ordinary residential/accessory use, though individual septic-system capacity (Panhandle Health District) can functionally cap guest counts on unincorporated lakefront parcels.",
-      "Required safety equipment only (smoke alarms, CO detector/floor, extinguisher, escape ladders); Coeur d'Alene's legacy \"safety checklist\" was self-certified, not an in-person inspection.",
-      "Much of the Lake Coeur d'Alene shoreline sits inside HOA-governed developments &mdash; private CC&amp;R restrictions are unaffected by state preemption and are a live per-property diligence item.",
-      "This is a fast-moving area of law: as recently as mid-2025 this specific city would have rated Moderate-to-Restrictive. Re-verify before relying on it for a transaction."
+      "Coeur d'Alene's permit/inspection/ADU rules are pre-HB-583 holdovers that the city has not yet formally repealed &mdash; a procedural lag, not necessarily a substantive legal barrier, but its current public-facing pages being offline means the city's actual practice today could not be verified.",
+      "Don't confuse the City of Hayden (pop. ~15,500&ndash;16,500, no STR ordinance found) with the separate, much smaller City of Hayden Lake (pop. ~624, which does have its own detailed STR permit chapter) &mdash; these are two different municipalities.",
+      "Lake Coeur d'Alene's gated communities, notably Black Rock and Gozzer Ranch, reportedly carry their own stricter HOA rental restrictions (including boat-slip-use tied to rental status) &mdash; entirely independent of, and unaffected by, HB 583's government-only preemption.",
+      "Idaho Code &sect;67-6539 bars STR-specific licenses, fees, permits, caps, and owner-occupancy mandates statewide &mdash; Coeur d'Alene's own ordinance text simply hasn't caught up to it yet."
     ],
     "sources": [
       {"title": "Idaho Code §67-6539", "url": "https://legislature.idaho.gov/statutesrules/idstat/title67/t67ch65/sect67-6539/"},
-      {"title": "Idaho Assoc. of REALTORS v. City of Lava Hot Springs — NAR case summary", "url": "https://www.nar.realtor/legal-case-summaries/idaho-supreme-court-strikes-down-citys-ban-on-non-owner-occupied-vacation-rentals"},
-      {"title": "City of Coeur d'Alene — Short-Term Rentals", "url": "https://www.cdaid.org/short-term-rentals"},
-      {"title": "Kootenai County Planning", "url": "https://www.kcgov.us/230/Planning"}
+      {"title": "Coeur d'Alene Municipal Code §17.08.1030, Permit Required", "url": "https://codelibrary.amlegal.com/codes/coeurdaleneid/latest/coeurdalene_id/0-0-0-12737"},
+      {"title": "Coeur d'Alene Municipal Code §17.06.670, ADU Permitting and Enforcement", "url": "https://codelibrary.amlegal.com/codes/coeurdaleneid/latest/coeurdalene_id/0-0-0-11243"},
+      {"title": "Bonner County Daily Bee — Coeur d'Alene fights Redman's STR bill", "url": "https://bonnercountydailybee.com/news/2026/feb/15/coeur-d-alene-fights-redmans-str-bill/"},
+      {"title": "City of Harrison — Local Option Tax page", "url": "https://cityofharrisonid.com/local-option-tax"},
+      {"title": "Idaho Association of Realtors, Inc. v. City of Lava Hot Springs (Justia)", "url": "https://law.justia.com/cases/idaho/supreme-court-civil/2025/50888.html"}
     ]
   },
 
   "boise-foothills-eagle": {
-    "tier": "Investor-Friendly (Recently Deregulated)",
-    "verifiedDate": "2026-09-16",
-    "summary": "Boise ran an active, evolving STR license regime from 2019 until repealing it in May 2026 specifically to comply with the state's new preemption law. Meridian, Eagle, and unincorporated Ada County never had comparably strict rules. Because this cluster's revenue is driven by a small number of large foothills/Eagle homes, HOA status is likely the more binding real-world constraint today.",
+    "tier": "Investor-Friendly",
+    "verifiedDate": "2026-09-17",
+    "summary": "Boise fully repealed and de-codified its STR license as of May 18, 2026, ahead of the July 1 statewide deadline &mdash; its municipal code chapter now reads simply '[RESERVED].' Meridian, Eagle, and unincorporated Ada County show no evidence of ever having adopted a dedicated STR ordinance. The main practical variable in this region isn't regulatory risk but tax geography: the Greater Boise Auditorium District's irregular, non-jurisdictional boundary determines whether a specific property owes a 13% or an 8% total tax rate.",
     "permitResidency": [
-      "Permit / license required? No &mdash; the City of Boise's own Clerk page confirms its STR-specific business license was repealed effective May 18, 2026, \"to align with changes in Idaho state law,\" ahead of the July 1 statewide deadline. No STR-specific ordinance was confirmed for Meridian, Eagle, or unincorporated Ada County (a new Title 8 zoning code, ~January 2025, predates the state law).",
-      "Primary residence required? No &mdash; not required anywhere in this cluster."
+      "Permit / license required? No. Boise's STR license (Title 3, Ch. 22, historically ~$80/yr plus insurance and a local-contact requirement) was formally repealed effective May 18, 2026; the chapter is now officially '[RESERVED]' in the city's own code. No dedicated STR ordinance was found, past or present, for Meridian, Eagle, or unincorporated Ada County.",
+      "Primary residence required? No, anywhere in this cluster &mdash; barred statewide, and none was found historically either."
     ],
     "operatingLimits": [
-      "No caps or density limits in any of the four jurisdictions.",
-      "Occupancy: IBC-based limits only.",
-      "Taxes: 8% state baseline, plus a 5% Greater Boise Auditorium District room tax (explicitly applies to STR-marketplace bookings) covering a large part of Boise, all of Garden City, and portions of Meridian/Eagle &mdash; roughly 13% combined inside the district, 8% outside it. Foothills and outlying Eagle parcels may sit outside the district boundary; check the parcel-level lookup."
+      "No caps, density limits, or owner-occupancy rules in any of the four jurisdictions &mdash; all now barred by Idaho Code &sect;67-6539 regardless. Standard IBC-based occupancy limits apply.",
+      "Taxes: 8% state baseline (6% sales + 2% Travel &amp; Convention) everywhere in this cluster, plus a confirmed 5% Greater Boise Auditorium District room tax &mdash; 13% total &mdash; for any property inside the district's boundary. That boundary runs along old Boise Junior College district lines (roughly Floating Feather Rd north, Lake Hazel Rd south, Eagle Rd west, Warm Springs/Gowen confluence east) and explicitly does <em>not</em> track any city or county line &mdash; it covers most of Boise and all of Garden City, but only portions of Meridian and Eagle and some unincorporated Ada County land. Confirm a specific parcel's status directly with the district (208-336-8900) before assuming either rate."
     ],
     "investorNotes": [
-      "Boise continues ordinary nuisance/noise/parking/safety enforcement post-repeal, the same as for any residence &mdash; no STR-specific compliance mechanism remains since no license exists to revoke.",
-      "The Idaho Association of Counties has publicly flagged that eliminating STR registries statewide makes proactive safety-equipment enforcement harder &mdash; expect complaint-driven enforcement going forward.",
-      "The Boise foothills and much of Eagle contain numerous HOA-governed subdivisions (large-lot estates, golf-course/equestrian communities, master-planned Eagle developments) where HOAs commonly restrict STRs independent of public law &mdash; likely the binding constraint for this cluster's larger, higher-revenue homes.",
-      "This is a very new law (in force ~2.5 months at verification); even its own sponsors reportedly called it imperfect, with a possible legislative revisit in 2027."
+      "Boise's repeal was explicit and self-described as compliance-driven ('to align with changes in Idaho state law') &mdash; this is a genuine, confirmed deregulation, not just an assumption based on the state statute.",
+      "Idaho Code &sect;67-6539 bars STR-specific licenses, fees, permits, caps, and owner-occupancy mandates statewide &mdash; the Idaho Association of Counties has publicly noted this also removes local governments' main tool for proactively identifying STR properties, so enforcement of the still-allowed safety rules is now essentially complaint-driven everywhere in this cluster.",
+      "Idaho Code &sect;55-3211 grandfathers pre-existing HOA rental bans but bars new ones without written owner consent &mdash; many older Boise Foothills subdivisions predate the Airbnb era and are unlikely to have STR-restrictive CC&amp;Rs, but newer master-planned Eagle/Foothills communities could have restrictions baked into their original declarations. No specific subdivision-level ban was identified either way &mdash; check the Ada County Recorder per property.",
+      "The 5-point tax swing (8% vs. 13%) inside vs. outside the Auditorium District is the single most consequential number to verify per-property in this region &mdash; it can matter more to net yield than any regulatory question."
     ],
     "sources": [
-      {"title": "City of Boise — Short-Term Rental License", "url": "https://www.cityofboise.org/departments/city-clerk/licensing/other/short-term-rental-license/"},
       {"title": "Idaho Code §67-6539", "url": "https://legislature.idaho.gov/statutesrules/idstat/title67/t67ch65/sect67-6539/"},
-      {"title": "Greater Boise Auditorium District FAQ", "url": "https://www.boiseauditorium.com/faq/"},
-      {"title": "Idaho Association of Counties", "url": "https://idcounties.org/short-term-rental-bill-passes-senate-but-not-without-opposition/"}
+      {"title": "Short-Term Rental License — City of Boise", "url": "https://www.cityofboise.org/departments/city-clerk/licensing/other/short-term-rental-license/"},
+      {"title": "Boise City Code Chapter 22 (amlegal, shows \"[RESERVED]\")", "url": "https://codelibrary.amlegal.com/codes/boise_id/latest/boise/0-0-0-46790"},
+      {"title": "FAQs — Boise Auditorium District", "url": "https://www.boiseauditorium.com/faq/"},
+      {"title": "District Boundaries — Boise Auditorium District", "url": "https://www.boiseauditorium.com/district-boundaries/"},
+      {"title": "Idaho Association of Counties — Short-Term Rental Bill Passes Senate, But Not Without Opposition", "url": "https://idcounties.org/short-term-rental-bill-passes-senate-but-not-without-opposition/"}
     ]
   },
 
   "sun-valley-wood-river": {
-    "tier": "Investor-Friendly, Ketchum Still Transitioning",
-    "verifiedDate": "2026-09-16",
-    "summary": "Ketchum ran the most developed STR framework in the Wood River Valley (permit, mandatory inspection, a one-per-parcel cap, a 2-night minimum) and is mid-rewrite to comply with state law. Sun Valley, Hailey, and unincorporated Blaine County were already effectively hands-off. A more permissive bill that would have let cities require permits for \"professional\" operators (SB 1263) was considered and did not pass.",
+    "tier": "Verify / Heavier Constraints",
+    "verifiedDate": "2026-09-17",
+    "summary": "Ketchum's public-facing rules are stale and openly contradict current law &mdash; the city's own site still describes a $504 annual STR permit, mandatory inspections, a 2-night minimum, and a one-STR-per-parcel cap, even though council reportedly passed a repeal ordinance months ago. Hailey never had a general STR permit, but its distinctive ADU rule (only one of a primary home + ADU pair may run short-term, the other must go long-term or owner-occupied) is a real, still-operative constraint that likely survives HB 583 because it offers a long-term-rental alternative rather than mandating owner-occupancy outright. Sun Valley and unincorporated Blaine County show comparatively little documented friction.",
     "permitResidency": [
-      "Permit / license required? No, statewide, as of July 1, 2026. Ketchum's ~$500/property annual permit and mandatory Fire District inspection are being eliminated per a mid-2026 code rewrite; whether the city's legacy one-per-parcel cap and 2-night minimum survived that rewrite is unconfirmed. Sun Valley never adopted an STR ordinance (voluntary safety guidance only, since 2022). Hailey requires standard tax/business registration, not an STR-specific permit.",
-      "Primary residence required? No, anywhere in the valley."
+      "Permit / license required? Ketchum's website still shows a $504 permit requiring Fire District inspection approval &mdash; reportedly repealed by council action around June 2026, but no updated public page or confirmed final ordinance number was found; treat the fee/inspection regime as legally unenforceable but verify directly before relying on the city's own site. Hailey has no general STR permit; its only mechanism is embedded in its ADU code. Sun Valley's STR permit/license status could not be confirmed against its own current code text. No STR-specific ordinance chapter was found for unincorporated Blaine County.",
+      "Primary residence required? No general mandate anywhere in the valley. Hailey's ADU rule requires the <em>other</em> unit on a primary+ADU lot to be either owner-occupied <strong>or</strong> a long-term rental (31+ days) when one unit runs short-term &mdash; not a strict owner-occupancy mandate, and likely survives HB 583 for that reason. Ketchum's older, similar ADU rule has no long-term-rental alternative and offers no confirmed exemption, making its current enforceability genuinely uncertain."
     ],
     "operatingLimits": [
-      "Ketchum's cap and minimum-stay rules, if not already repealed, are preempted regardless. No caps found in Sun Valley, Hailey, or unincorporated Blaine County.",
-      "Hailey's one notable surviving local rule: on a lot with both a primary home and an ADU, only one of the two units may operate short-term &mdash; untested against the state's equal-treatment standard.",
-      "Taxes: 8% state baseline. Ketchum adds a 3% lodging Local Option Tax (roughly 11%; a further increase was under discussion for a 2026 ballot, outcome unconfirmed). Sun Valley adds 4% (roughly 12%). Hailey's stacked local taxes total roughly 4% (roughly 12% combined). Unincorporated Blaine County has no local-option tax."
+      "Ketchum's old one-STR-per-parcel cap and 2-night minimum appear to target STRs differently than ordinary homes and are very likely preempted, though this hasn't been formally confirmed in an adopted ordinance. No numeric cap was found in Sun Valley, Hailey, or Blaine County.",
+      "Taxes: state 8% baseline. Ketchum and Hailey both run a confirmed 4% local-option lodging tax (3% base + 1% supplemental) &mdash; roughly 12% combined in each &mdash; though a pending Hailey ballot measure may have already raised this to 6% (roughly 14% combined; outcome unconfirmed). Sun Valley confirms a 4% occupancy tax &mdash; also roughly 12% combined. Unincorporated Blaine County has no local-option tax &mdash; roughly 8% total, the lowest in the region."
     ],
     "investorNotes": [
-      "Ketchum's post-rewrite safety-equipment standard moves to self-certification rather than a Fire District walkthrough.",
-      "Condo associations and subdivisions across the valley (Sun Valley's Elkhorn/Warm Springs-area complexes, Ketchum condo buildings, Hailey subdivisions) commonly impose their own minimum-stay or rental bans via private CC&amp;Rs &mdash; unaffected by state preemption.",
-      "Verify Ketchum's final adopted ordinance text directly before relying on cap/minimum-stay specifics &mdash; this research could not confirm the post-rewrite text.",
-      "Whether Airbnb/Vrbo automatically collect each city's local-option tax (versus just the 8% state layer) was not independently confirmed &mdash; check platform tax settings."
+      "Idaho's newer ADU-specific statute (&sect;67-6541, from SB 1354) only bars owner-occupancy mandates in cities over 10,000 population &mdash; none of Ketchum, Sun Valley, or Hailey cross that threshold, so that particular law doesn't reach this region. The real protection against ADU owner-occupancy mandates here is the population-independent HB 583/&sect;67-6539, which is almost certainly why Hailey rewrote its rule to add a long-term-rental alternative rather than drop the requirement outright.",
+      "Don't rely on Ketchum's own website for current STR rules &mdash; it appears to still describe a program the city may have already repealed. Confirm the actual adopted ordinance number and effective date directly with the city clerk.",
+      "Sun Valley's Elkhorn/Warm Springs condo complexes and various Ketchum condo buildings commonly carry private, pre-2022 minimum-stay/rental restrictions in their CC&amp;Rs &mdash; these are grandfathered under Idaho Code &sect;55-3211 and fully independent of the state's STR permit preemption.",
+      "Two local-option-tax ballot measures (Ketchum and possibly Hailey) may be pending or recently resolved &mdash; confirm current combined tax rates directly before quoting after-tax yields for this region."
     ],
     "sources": [
       {"title": "Idaho Code §67-6539", "url": "https://legislature.idaho.gov/statutesrules/idstat/title67/t67ch65/sect67-6539/"},
-      {"title": "City of Ketchum — Short-Term Rentals", "url": "https://ketchumidaho.gov/208/Short-Term-Rentals"},
+      {"title": "Idaho Code §67-6541 (ADU statute, from SB 1354)", "url": "https://legislature.idaho.gov/statutesrules/idstat/title67/t67ch65/sect67-6541/"},
       {"title": "City of Sun Valley — Local Option Tax", "url": "https://sunvalleyidaho.gov/optiontax"},
-      {"title": "City of Hailey — Accessory Dwelling Units", "url": "https://haileycityhall.org/2023/01/accessory-dwelling-units/"}
+      {"title": "City of Hailey — Accessory Dwelling Units", "url": "https://haileycityhall.org/2023/01/accessory-dwelling-units/"},
+      {"title": "Idaho Mountain Express — Ketchum forced to decrease regulations on short-term rentals", "url": "https://www.mtexpress.com/news/ketchum/ketchum-forced-to-decrease-regulations-on-short-term-rentals/article_efb82936-9dbf-4006-a335-8bc02d41a065.html"},
+      {"title": "Idaho Mountain Express — Hailey P&Z reluctantly advances revised ADU law", "url": "https://www.mtexpress.com/news/hailey/hailey-p-z-reluctantly-advances-revised-adu-law/article_3ec1fdb3-4377-43a6-971e-9145dbfd80eb.html"}
     ]
   },
 
   "sandpoint-pend-oreille": {
-    "tier": "Investor-Friendly, High Local Lodging Tax",
-    "verifiedDate": "2026-09-16",
-    "summary": "Sandpoint had a 35-unit cap on non-owner-occupied STRs until early 2026 and publicly resisted the state's new preemption law longer than most Idaho cities. Unincorporated Bonner County (including Sagle) ran a lighter administrative-permit system. Both are now bound by the same permissive state floor; the real remaining difference between them is tax rate, not legality.",
+    "tier": "Verify / Heavier Constraints",
+    "verifiedDate": "2026-09-17",
+    "summary": "Sandpoint's city council openly opposed HB 583 and used the full statutory three-readings process to delay compliance as long as legally possible, but the city's own site now confirms no general STR operating permit has been required since July 1, 2026 &mdash; its former 35-unit cap on non-owner-occupied STRs was already removed earlier that year. Unincorporated Bonner County is the opposite problem: its own live FAQ page still flatly states a Vacation Rental Permit is required, with no acknowledgment that the requirement is now preempted, creating real ambiguity about current enforcement in the Sagle/lake-shoreline area.",
     "permitResidency": [
-      "Permit / license required? No, statewide, as of July 1, 2026 &mdash; though Sandpoint's City Council deadlocked 4-4 on formally repealing its own STR ordinance in May 2026 and deliberately slowed adoption while objecting to the state law; final repeal was not confirmed complete as of the most recent reporting found (legally unenforceable regardless). Bonner County's Vacation Rental Permit (County Code &sect;12-484) is similarly preempted but unconfirmed as formally amended. Sandpoint separately still runs a Short-Term Rental Occupancy Tax Permit &mdash; a tax-collection registration, not an operating permit, which remains valid.",
-      "Primary residence required? No &mdash; Sandpoint's old owner-occupied/non-owner-occupied distinction (with 200-ft neighbor notification for non-owner-occupied units) is preempted."
+      "Permit / license required? No general operating permit in Sandpoint as of July 1, 2026, per the city's own current page &mdash; only a separate Short-Term Rental Occupancy <em>Tax</em> Permit remains (for tax collection, not operating authority). Unincorporated Bonner County's own live FAQ still says flatly 'Vacation Rentals require a Vacation Rental Permit' with no HB 583 caveat &mdash; this permit is very likely legally unenforceable now, but the county's public materials give no indication of that; verify current practice directly (208-265-1458).",
+      "Primary residence required? No, in either jurisdiction &mdash; barred statewide, and Sandpoint's former 35-unit cap on non-owner-occupied STRs in residential zones was already removed via city Ordinance 1435 (effective Feb. 2026), before HB 583 even took effect."
     ],
     "operatingLimits": [
-      "Sandpoint's 35-unit cap on non-owner-occupied STRs was voluntarily removed in February 2026 after litigation threats, and is barred by state law regardless.",
-      "Bonner County's old occupancy formula (tied to bedrooms and parking spaces) is preempted; only IBC-based limits may now apply.",
-      "Taxes: 8% state baseline. Sandpoint adds a 14% Resort City Occupancy Tax (raised from 7% in 2023, approved through 2035) &mdash; roughly 22% combined, among the highest in Idaho. Unincorporated Bonner County (Sagle, etc.) has no local-option tax &mdash; roughly 8% total."
+      "Sandpoint's former two-tier ordinary/high-occupancy system (with CUP-style review for 11+/12+ guest properties) is superseded by the city's own confirmation that no general permit applies at all. Bonner County's code still defines a separate High Occupancy Vacation Rental Permit (20+ occupants) and a base occupancy formula (2/bedroom+2, capped at 20) &mdash; the permit mechanism is very likely preempted, though the underlying occupancy math may survive as an IBC-adjacent standard.",
+      "Taxes: Sandpoint carries the highest confirmed combined tax rate found anywhere in this Idaho research &mdash; a 14% city Resort City Tax (two stacked 7% components, one from 2022) plus the 8% state baseline = 22% total inside city limits. Unincorporated Bonner County (including Sagle) has no local-option tax at all &mdash; just the 8% state baseline, a 14-point difference from in-town Sandpoint."
     ],
     "investorNotes": [
-      "Lake Pend Oreille has numerous platted lakefront subdivisions in both Sandpoint and Sagle where HOA/CC&amp;R rental restrictions are a plausible, common friction point independent of public law.",
-      "Required safety equipment only going forward; STR-specific inspections and neighbor-notification rules are barred.",
-      "Sandpoint's public pushback against the state law (a divided Council, a deliberately slow-walked repeal process) makes this a jurisdiction worth re-checking directly before a transaction &mdash; the practical/enforcement gap between state law and local administrative posture may be wider here than elsewhere.",
-      "Whether Bonner County's parking-tied occupancy formula remains enforceable in any form is unclear, since it differs from the IBC-based standard state law now requires."
+      "Sandpoint's council used a 3-2 first-reading vote (mayor breaking the tie) plus a unanimous 4-0 vote against expediting the process specifically to delay compliance as long as legally possible &mdash; a materially different (and more accurate) story than a simple '4-4 deadlock,' but the outcome is the same: full compliance as of July 1, 2026, per the city's own current page.",
+      "Bonner County's public materials have not been updated to reflect HB 583 at all &mdash; this is a real discrepancy between the law and what the county is telling the public, and a directly relevant diligence item for any Sagle-area or unincorporated-county property.",
+      "Idaho Code &sect;55-3211 grandfathers pre-existing HOA rental restrictions on Lake Pend Oreille shoreline subdivisions in both Sandpoint and Sagle &mdash; check recorded CC&amp;Rs directly, since these are unaffected by state or city deregulation.",
+      "The 22% total tax burden inside Sandpoint versus 8% in unincorporated Bonner County is a bigger swing than almost anywhere else in this research &mdash; confirm city-limits-vs-county status per parcel before modeling net yield."
     ],
     "sources": [
       {"title": "Idaho Code §67-6539", "url": "https://legislature.idaho.gov/statutesrules/idstat/title67/t67ch65/sect67-6539/"},
-      {"title": "City of Sandpoint — Resort City Tax / STR Occupancy Tax", "url": "https://www.sandpointidaho.gov/finance/page/resort-city-tax-short-term-rental-occupancy-tax"},
-      {"title": "Bonner County Code §12-484", "url": "https://codelibrary.amlegal.com/codes/bonnercountyid/latest/bonnercounty_id/0-0-0-2971"},
-      {"title": "Bonner County Daily Bee — Sandpoint HB 583 coverage", "url": "https://bonnercountydailybee.com/news/2026/may/22/sandpoint-officials-rail-against-prolong-adoption-of-hb-583/"}
+      {"title": "Short Term Rental (STR) — City of Sandpoint", "url": "https://www.sandpointidaho.gov/community-planning-development/page/short-term-rental-str"},
+      {"title": "Resort City Tax: Short Term Rental Occupancy Tax — City of Sandpoint", "url": "https://www.sandpointidaho.gov/finance/page/resort-city-tax-short-term-rental-occupancy-tax"},
+      {"title": "Bonner County Code §12-484, Vacation Rentals", "url": "https://codelibrary.amlegal.com/codes/bonnercountyid/latest/bonnercounty_id/0-0-0-2971"},
+      {"title": "Bonner County Planning — Frequently Asked Questions", "url": "https://www.bonnercountyid.gov/departments/Planning/frequently-asked-questions-1"},
+      {"title": "Sandpoint Reader — 'Some of the worst legislation I've ever seen'", "url": "https://sandpointreader.com/some-of-the-worst-legislation-ive-ever-seen/"}
     ]
   },
 
   "lava-hot-springs": {
-    "tier": "Investor-Friendly (Post-Litigation)",
-    "verifiedDate": "2026-09-16",
-    "summary": "Lava Hot Springs' own zoning ordinance was struck down by the Idaho Supreme Court in 2025 for confining non-owner-occupied STRs to commercial zones; the 2026 statewide preemption law then went further. The city passed a narrower safety-focused ordinance just before that law took effect. Unincorporated Bannock County appears to have no STR-specific rules at all.",
+    "tier": "Investor-Friendly",
+    "verifiedDate": "2026-09-17",
+    "summary": "Lava Hot Springs is the namesake city in the Idaho Supreme Court case that helped trigger statewide STR reform &mdash; the Court struck down its old zoning ban on non-owner-occupied rentals in May 2025, and the city's own May 2026 Ordinance 2026-005 replaced its prior regime with a pure health-and-safety ordinance containing no license, permit, fee, or owner-occupancy requirement at all. Unincorporated Bannock County has no STR-specific ordinance of any kind, so state law is essentially the whole story there.",
     "permitResidency": [
-      "Permit / license required? Historically yes &mdash; the city's old business-license requirement was the subject of the litigated case (<em>Idaho Assoc. of REALTORS v. City of Lava Hot Springs</em>, decided May 2025). The city passed Ordinance 2026-005 in May 2026 (safety requirements only, not a licensing gate) about six weeks before the state's July 1, 2026 preemption took effect; whether the old business-license requirement itself has been formally repealed is unconfirmed.",
-      "Primary residence required? No &mdash; the Supreme Court struck down the owner-occupied-only zoning rule, and owner-occupancy mandates are separately barred statewide."
+      "Permit / license required? No. Ordinance 2026-005 (adopted May 14, 2026) repeals the city's prior STR ordinance and contains no license, permit, registration, or fee requirement &mdash; a pure safety/occupancy ordinance consistent with what HB 583 still allows. No STR-specific permit or ordinance was found for unincorporated Bannock County at all.",
+      "Primary residence required? No &mdash; the Idaho Supreme Court already struck down the city's old owner-occupancy-based zoning distinction in May 2025, and HB 583 separately bars any owner-occupancy mandate statewide regardless."
     ],
     "operatingLimits": [
-      "A 13% citywide cap was under internal city consideration in a 2025 planning memo but never confirmed enacted, and would be barred by state law regardless.",
-      "Occupancy: IBC-based limits only.",
-      "Taxes: 8% state baseline, plus a reported 3% local hotel-motel/STR occupancy tax (roughly 11% combined) &mdash; a ballot measure to raise this to 5% was reportedly floated around 2024–2025; outcome unconfirmed, treat 3% as the best-available current rate."
+      "No caps or zoning exclusions remain in either jurisdiction. Occupancy is capped at International Building Code non-transient-residential limits (Ordinance 2026-005 &sect;03.05.030(d)), tracking the state statute's own language almost verbatim. Required safety equipment: smoke alarms in every sleeping area, a fire extinguisher and CO detector per floor, removable escape ladders for above-ground sleeping rooms with windows, and a guest emergency-info handout.",
+      "Taxes: 8% state baseline, plus a city hotel-motel/STR occupancy tax reported at 3% &mdash; roughly 11% combined. The city has repeatedly (2021, and apparently again around 2024&ndash;2025) put a ballot measure to raise this to 5% before voters; no confirmed outcome was found, and independent 2026 sales-tax trackers still show the city's general rate unchanged, suggesting the increase likely hasn't passed &mdash; verify the current rate directly with Lava Hot Springs before publishing a number. No county-level lodging tax applies in unincorporated Bannock County."
     ],
     "investorNotes": [
-      "No STR-specific provisions were found for unincorporated Bannock County &mdash; the surrounding county may simply never have needed rules given the small unincorporated population near Lava.",
-      "A July 2025 city planning memo referenced 29 licensed STRs plus an estimated 5+ unlicensed, out of ~197 total housing units &mdash; useful market-context baseline, not a current legal requirement.",
-      "Required safety equipment only under Ordinance 2026-005 (smoke alarms, extinguishers, escape ladders, occupancy limits); exact penalty schedule and full ordinance text were not independently confirmed.",
-      "Whether individual listings sit inside city limits or unincorporated Bannock County was not determined for this research &mdash; verify per property, since only the city has documented rules."
+      "The <em>Idaho Assoc. of Realtors v. City of Lava Hot Springs</em> Idaho Supreme Court ruling (May 2025) is specific to this city and holds that confining a whole category of STR (non-owner-occupied) to commercial zones is an unlawful practical prohibition, not a permissible 'regulation' &mdash; a favorable, on-point precedent unique to this region.",
+      "HB 583, passed roughly ten months after that ruling, went further and closed the licensing/fee workaround the ruling itself didn't address &mdash; the two are related but distinct legal developments, and Lava Hot Springs' Ordinance 2026-005 is the city's own direct response to HB 583 specifically, not the court case.",
+      "Lava is a tiny resort town (under ~400 year-round residents against roughly 400,000+ annual visitors) &mdash; its aggressive tourism-tax ballot history reflects genuine local fiscal pressure, worth knowing even though it hasn't yet translated into a higher confirmed rate.",
+      "Private HOA/CC&amp;R restrictions were not identified for this region but would be unaffected by either the court ruling or HB 583 if any exist &mdash; check per property as with any Idaho market."
     ],
     "sources": [
-      {"title": "Idaho Assoc. of REALTORS v. City of Lava Hot Springs — NAR case summary", "url": "https://www.nar.realtor/legal-case-summaries/idaho-supreme-court-strikes-down-citys-ban-on-non-owner-occupied-vacation-rentals"},
-      {"title": "Lava Hot Springs city planning memo (2025-07-06)", "url": "https://irp.cdn-website.com/5d7d58d9/files/uploaded/Short+Term+Rental+Memo.pdf"},
       {"title": "Idaho Code §67-6539", "url": "https://legislature.idaho.gov/statutesrules/idstat/title67/t67ch65/sect67-6539/"},
-      {"title": "Idaho State Tax Commission — Travel & Convention Tax", "url": "https://tax.idaho.gov/taxes/taxes-on-sales/travel-and-convention-tax/"}
+      {"title": "Idaho Assoc. of Realtors, Inc. v. City of Lava Hot Springs, Docket 50888", "url": "https://law.justia.com/cases/idaho/supreme-court-civil/2025/50888.html"},
+      {"title": "City of Lava Hot Springs — Ordinance No. 2026-005", "url": "https://irp.cdn-website.com/5d7d58d9/files/uploaded/2026-005+STR.pdf"},
+      {"title": "NAR — Idaho Supreme Court Strikes Down City's Ban on Non-Owner-Occupied Vacation Rentals", "url": "https://www.nar.realtor/legal-case-summaries/idaho-supreme-court-strikes-down-citys-ban-on-non-owner-occupied-vacation-rentals"},
+      {"title": "Idaho State Journal — Rising costs, including law enforcement, prompt Lava Hot Springs to seek raise in special sales tax", "url": "https://www.idahostatejournal.com/news/local/rising-costs-including-law-enforcement-prompt-lava-hot-springs-to-seek-raise-in-special-sales/article_356efcf5-370b-5395-8a8d-c0cb899ac9da.html"}
     ]
   },
 
   "bear-lake": {
-    "tier": "Investor-Friendly; HOA-Restricted on Specific Parcels",
-    "verifiedDate": "2026-09-16",
-    "summary": "Fish Haven and St. Charles, on the Idaho shore of Bear Lake, are both unincorporated &mdash; Bear Lake County is the only government with authority, and it has essentially no published STR-specific rules. The real constraint here is private: a confirmed shorefront HOA (Bear Lake West) bans STRs outright, and that ban legally survives state preemption.",
+    "tier": "Verify / Heavier Constraints",
+    "verifiedDate": "2026-09-17",
+    "summary": "Government-level STR rules on Idaho's side of Bear Lake are about as light as the law now allows &mdash; no county permit, cap, or owner-occupancy rule in Fish Haven, St. Charles, or the rest of unincorporated Bear Lake County. What keeps this region out of the top tier is a real, verified private restriction: the Bear Lake West subdivision's own governing documents ban STRs outright, a ban that predates Idaho's 2022 HOA-rental-restriction law and is confirmed still enforceable, plus a documented septic-capacity mismatch at some large group-hosting properties that state law doesn't address.",
     "permitResidency": [
-      "Permit / license required? No &mdash; no dedicated STR permit, registration, or business-license process is published on the county's site, and state law now bars adding one. 2026 legislative testimony referenced an STR-specific asphalt-driveway requirement attributed to the county, but the underlying ordinance (if any) could not be located and would be unenforceable regardless.",
-      "Primary residence required? No &mdash; not required, and barred statewide."
+      "Permit / license required? No &mdash; no countywide STR permit, license, or registration was found, and any such requirement would now be barred by HB 583 regardless. St. Charles, a small incorporated city, has no confirmed STR-specific rules either.",
+      "Primary residence required? No, government-wide. However, the Bear Lake West subdivision in Fish Haven (a substantial, amenity-rich HOA community with a golf course, restaurant, and HOA-managed water/sewer) bans short-term rentals outright in its own CC&amp;Rs &mdash; confirmed directly from the HOA's own FAQ, and this predates Idaho's 2022 HOA-rental-restriction statute, so it's grandfathered and legally durable against current owners regardless of how permissive state law becomes."
     ],
     "operatingLimits": [
-      "No caps or density limits found or permitted.",
-      "Occupancy: IBC-based limits only &mdash; notable given local reporting has described some older farmhouses hosting 60–80 people, well beyond any reasonable limit, with real septic-capacity strain.",
-      "Taxes: 8% state baseline only (6% sales + 2% Travel &amp; Convention). No county-level or local-option lodging tax exists &mdash; unincorporated communities can't levy Idaho's resort-city tax."
+      "No occupancy cap or STR-specific inspection regime was found at the county level &mdash; a real soft spot, since local reporting documents some Idaho-side farmhouses hosting 60&ndash;80 guests against septic systems sized only by bedroom count (Idaho's statewide septic standard), not by actual advertised sleeping capacity. This is a structural mismatch state law doesn't address and isn't actively audited today.",
+      "Taxes: 8% state baseline only (6% sales + 2% Travel &amp; Convention). No local-option or auditorium-district tax applies &mdash; unincorporated Fish Haven cannot levy one, and St. Charles doesn't appear on Idaho's resort-city local-option-tax list."
     ],
     "investorNotes": [
-      "<strong>Bear Lake West</strong>, a residential community in Fish Haven, has an outright STR ban in its governing documents (adopted to protect shared amenities from large-group use). Idaho Code &sect;55-3211 grandfathers pre-existing HOA restrictions, so this ban survives state preemption &mdash; a property inside Bear Lake West cannot legally operate as an STR regardless of how permissive county/state law is.",
-      "Other shorefront HOAs were not identified in this research; check per-property before assuming any Bear Lake listing is unrestricted.",
-      "Required safety equipment only (smoke alarms, extinguisher, CO detector, escape ladders); no dedicated county inspection program was found.",
-      "An Idaho-side property owes only Idaho taxes (8%) regardless of Utah-based marketing or management, even though the lake and its tourism economy straddle both states."
+      "The Bear Lake West HOA ban is real and verified, not just alleged &mdash; the HOA's own governing-document language ('short term rentals or time shares is prohibited') was confirmed directly, and its president is on record explaining the ban predates the 2022 state HOA law specifically to survive it. This is a meaningfully different situation from most other 'Investor-Friendly' Idaho regions in this research, where the only friction is administrative lag, not a durable private ban.",
+      "HB 583/&sect;67-6539 constrains only government regulation, not private HOA covenants &mdash; a property inside Bear Lake West cannot legally operate as an STR no matter how permissive county and state law are.",
+      "The septic-capacity/large-group-hosting gap is a real diligence and reputational-risk item on the Idaho side, and has drawn vocal local pushback (the Bear Lake Regional Commission's own director on record) that could eventually prompt the county to adopt the IBC-based occupancy limits it's currently entitled to but hasn't used.",
+      "No other named shorefront HOA was identified in this research &mdash; check parcel-level HOA membership before assuming any given Fish Haven or St. Charles listing is unrestricted."
     ],
     "sources": [
-      {"title": "Utah Public Radio — Bear Lake STR/HOA reporting", "url": "https://www.upr.org/utah-news/2025-06-26/a-summer-spot-utahns-and-idahoans-love-is-losing-its-charm-residents-say"},
-      {"title": "Bear Lake West community FAQ", "url": "https://www.bearlakewest.com/faq.php"},
-      {"title": "Idaho Code §55-3211", "url": "https://law.justia.com/codes/idaho/title-55/chapter-32/section-55-3211/"},
-      {"title": "Bear Lake County Planning and Zoning", "url": "https://www.bearlakecounty.info/planning-and-zoning.html"}
+      {"title": "Idaho Code §67-6539", "url": "https://legislature.idaho.gov/statutesrules/idstat/title67/t67ch65/sect67-6539/"},
+      {"title": "Idaho Code §55-3211 (HOA rental-restriction statute)", "url": "https://www.communitypay.us/laws/idaho/statute/idaho-code-55-3211/"},
+      {"title": "Bear Lake West Property Owners' Association FAQ", "url": "https://www.bearlakewestpoa.com/faq/"},
+      {"title": "Bear Lake County Planning and Zoning", "url": "https://www.bearlakecounty.info/planning-and-zoning.html"},
+      {"title": "Utah Public Radio — Residents say one of Utah's favorite summer spots is losing its charm", "url": "https://www.upr.org/utah-news/2025-06-26/a-summer-spot-utahns-and-idahoans-love-is-losing-its-charm-residents-say"},
+      {"title": "Idaho State Tax Commission — Travel and Convention Tax", "url": "https://tax.idaho.gov/taxes/taxes-on-sales/travel-and-convention-tax/"}
     ]
   },
 
   "garden-valley": {
-    "tier": "Investor-Friendly (Minimal Local Rules)",
-    "verifiedDate": "2026-09-16",
-    "summary": "Garden Valley is unincorporated, so Boise County's general zoning/building code is the applicable framework &mdash; no STR-specific permit or license program was ever found here. The small nearby City of Crouch has no STR ordinance either. This is Idaho's statewide-preemption floor with essentially no local layer on top of it.",
+    "tier": "Investor-Friendly",
+    "verifiedDate": "2026-09-17",
+    "summary": "Neither Boise County nor the City of Crouch has ever adopted an STR-specific ordinance &mdash; there was nothing pre-HB-583 to repeal, and the incoming state preemption simply locks in that STRs must be treated as ordinary residential use going forward. The only real wrinkle is tax stacking: Crouch does levy a real, confirmed 3% lodging tax within its small city limits, a genuine surprise compared to the more common assumption that a town this size wouldn't bother.",
     "permitResidency": [
-      "Permit / license required? No &mdash; no evidence Boise County ever ran an STR-specific permit or license program (unlike, e.g., the City of Boise, a distinct and unrelated jurisdiction despite the similar name). Whether a generic county business license incidentally applies to STR operators is unconfirmed.",
+      "Permit / license required? No, anywhere in this region &mdash; no STR-specific ordinance, permit, or license regime was found for unincorporated Boise County or the City of Crouch, past or present. Crouch does require a general, non-STR-specific $20/year Business/Vendor License for any commercial activity in city limits; how (or whether) this is applied to STR hosts in practice is unconfirmed.",
       "Primary residence required? No &mdash; not required, and barred statewide regardless."
     ],
     "operatingLimits": [
-      "No caps, density limits, or spacing rules found or permitted.",
-      "Occupancy: generally-applicable IBC-based limits only.",
-      "Taxes: 8% state baseline only (6% sales + 2% Travel &amp; Convention). No local-option tax was found for Garden Valley or Crouch &mdash; neither appears on the state's list of cities levying one."
+      "No caps, density limits, or occupancy rules found at either the county or city level &mdash; standard IBC-based occupancy limits are the only ceiling that applies.",
+      "Taxes: 8% state baseline in unincorporated Garden Valley (the great majority of the region's inventory). Inside Crouch's small incorporated city limits specifically, a confirmed 3% room-occupancy Local Option Tax (voter-approved 2021, 66% in favor) applies on top &mdash; roughly 11% total there. The exact city-limits boundary could not be determined precisely; verify per-parcel via the Boise County Assessor GIS before assuming which rate applies."
     ],
     "investorNotes": [
-      "The City of Crouch (pop. ~150–185) publishes only water, firearms-discharge, and fireworks ordinances &mdash; no STR content; relevant only to the handful of properties actually inside its city limits.",
-      "Required safety equipment only (smoke alarms, extinguisher, CO detector, escape ladders); no inspection regime found or permitted.",
-      "Garden Valley has at least some HOA-governed subdivisions (e.g. Mountain View Place, Country Living Estates) where private covenants could still restrict STR use independent of the permissive public-law backdrop &mdash; check per subdivision.",
-      "This is a small rural county with thin public documentation and almost no enforcement track record yet under the new state law &mdash; absence of a published rule isn't strong evidence there truly is none."
+      "This is a genuinely thin-documentation, sparsely-governed rural county (Boise County's own site is behind a bot-challenge, and Crouch is a town of ~150&ndash;200 people with a part-time city hall) &mdash; the surprising, well-confirmed finding is that Crouch does have a real, voter-approved lodging tax, contradicting the common assumption that a town this small wouldn't bother; everything else about the light-touch regulatory picture held up under deeper research.",
+      "Idaho Code &sect;67-6539 bars STR-specific licenses, fees, permits, caps, and owner-occupancy mandates statewide &mdash; moot here in the sense that neither jurisdiction ever exercised that authority, but it forecloses either one from adopting such rules in the future.",
+      "It's unconfirmed whether Airbnb/Vrbo currently auto-collect Crouch's 3% local lodging tax on the city's behalf &mdash; hosts inside city limits should verify this directly with the platform and/or Crouch City Hall rather than assume.",
+      "South Fork Payette River subdivisions vary in HOA governance &mdash; some (e.g. Payette River Heights) are explicitly marketed as having no HOA/CC&amp;Rs, while others (e.g. South Fork Landing, a PUD) likely carry HOA documents of unconfirmed STR content. Check per subdivision."
     ],
     "sources": [
       {"title": "Idaho Code §67-6539", "url": "https://legislature.idaho.gov/statutesrules/idstat/title67/t67ch65/sect67-6539/"},
-      {"title": "City of Crouch — Ordinances", "url": "https://cityofcrouch.org/"},
-      {"title": "Boise County Planning and Zoning Department", "url": "https://www.boisecounty.us/services/planning-and-zoning/"},
-      {"title": "Idaho State Tax Commission — Travel & Convention Tax", "url": "https://tax.idaho.gov/taxes/taxes-on-sales/travel-and-convention-tax/"}
+      {"title": "City of Crouch — Local Option Tax page", "url": "https://cityofcrouch.org/local-option-tax/"},
+      {"title": "City of Crouch — Election results LOT PDF (Boise County Elections Dept)", "url": "https://cityofcrouch.org/wp-content/uploads/2021/11/Election-results-LOT-in-Crouch.pdf"},
+      {"title": "City of Crouch — Ordinances page", "url": "https://cityofcrouch.org/ordinances/"},
+      {"title": "Boise County — Planning and Zoning Department", "url": "https://www.boisecounty.us/services/planning-and-zoning/"},
+      {"title": "Idaho State Tax Commission — Short-term Rental Marketplaces", "url": "https://tax.idaho.gov/taxes/sales-use/guides-for-certain-groups/lodging/rentals/"}
     ]
   }
 }
