@@ -56,7 +56,9 @@ from sklearn.cluster import DBSCAN
 warnings.filterwarnings("ignore", category=UserWarning)
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
-INPUT_CSV = REPO_ROOT.parent.parent / "Snowflake" / "Idaho" / "Iqbal_Idaho_2026-09-16-1857.csv"
+# REPO_ROOT is .../Tools/STRClusterDiscovery/Idaho/webpage; Snowflake/ lives at
+# the STRWork root, four levels above REPO_ROOT.
+INPUT_CSV = REPO_ROOT.parent.parent.parent.parent / "Snowflake" / "Idaho" / "Iqbal_Idaho_2026-09-16-1857.csv"
 LISTINGS_OUT = REPO_ROOT / "data" / "listings.json"
 REGIONS_OUT = REPO_ROOT / "data" / "regions.json"
 

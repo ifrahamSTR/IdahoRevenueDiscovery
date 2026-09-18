@@ -2,7 +2,7 @@
 
 A statewide geographic discovery tool built from AirDNA/USPPD Idaho data
 (pulled via Snowflake). It is **not** a buy-box or market-selection report —
-see the Charlotte project (`../../7AugBuyBox/Charlotte/webpage`) for that kind
+see the Charlotte project (`../../../../7AugBuyBox/Charlotte/webpage`) for that kind
 of deliverable. This site exists to make geographic concentrations of
 strong-revenue Idaho listings visually discoverable, so an analyst can decide
 where deeper market research is worth doing. The map does not pre-select
