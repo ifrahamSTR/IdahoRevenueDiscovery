@@ -43,7 +43,7 @@ because of the `fetch()` call in `js/main.js`.
   preserve). Owns: the revenue metric/threshold controls, the property/
   location/amenity filters, the points/heat-all/heat-qualifying view-mode
   switcher, the Light/Terrain basemap switcher, the region-boundary overlay
-  (statewide page only), the click-to-inspect radius tool (up to 20km, with a
+  (statewide page only), the click-to-inspect radius tool (up to 50km, with a
   full local market summary — revenue/ADR/occupancy vs. the statewide
   baseline, property mix, amenities, nearby markets/cities, strongest
   listings), and the property detail modal (clicking a marker opens a card
